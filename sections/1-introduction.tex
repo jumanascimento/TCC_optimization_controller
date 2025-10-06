@@ -14,29 +14,29 @@ ROVs são veículos subaquáticos que variam de tamanho, podendo ser de maior ou
 
 Ao tirar o ser humano da zona de perigo são reduzidos os riscos fatais, além de oferecer vantagens operacionais como a possibilidade de um trabalho submerso contínuo e prolongado.
 
-Apesar da utilização de ROVs ser vantajosa e funcional, a operação desses veículos é um desafio devido à instabilidade gerada pelos oceanos, que contam com correntes marítimas imprevisíveis, baixa visibilidade, entre outras adversidades. 
+Apesar da utilização de ROVs ser vantajosa e funcional, em relação a utilização de mergulhadores humanos, a operação desses veículos é um desafio devido aos disturbios ambientais constantes gerados pelos oceanos, que contam com correntes marítimas imprevisíveis, baixa visibilidade, entre outras adversidades. 
 
-Assim, para lidar com as adversidades enfrentadas no ambiente subaquático, os ROVs necessitam de sistemas de controle capazes de compensar os ruídos gerados pelas perturbações ambientais, garantindo estabilidade, navegação autônoma e execução adequada das atividades para as quais foram projetados. Dessa forma, diversas técnicas de controle foram desenvolvidas, variando desde a modelagem do sistema até a utilização de inteligência artificial. 
+Assim, para lidar com as adversidades enfrentadas no ambiente subaquático, os ROVs necessitam de sistemas de controle capazes de compensar os ruídos gerados pelas perturbações ambientais, garantindo estabilidade e execução adequada das atividades para as quais foram projetados.
 
-Em \cite{8559384} são citados alguns tipos de controladores, entre eles o controlador fuzzy, caracterizado por sua independência de uma modelagem matemática exata do objeto de controle, tendo sua essência em estratégias de autocontrole. 
+Em \cite{8559384} são citados alguns tipos de controladores, entre eles o controlador PID, caracterizado por ser um controlador simples e amplamente utilizado, é um controle de resposta de velocidade, com efeito linear. Apesar de ser amplamente utilizado, não é o ideal para processos complexos e não lineares ou variantes no tempo.
 
 As redes neurais também são apontadas como um possível controlador para um ROV, sendo essas caracterizadas por serem capazes de aproximar qualquer função não linear na teoria. Apresentam uma alta capacidade de processamento paralelo, o que gera uma grande tolerância a falhas e eficiência no tratamento de múltiplos sinais de entrada e saída. 
 
 Apesar das inúmeras vantagens, é necessário ter cautela pois há a tendência de convergir para mínimos locais, além de sofrer com a lentidão na aprendizagem, limitação no número de camadas e riscos de overfitting. 
 
-Por último é mencionado o controlador PID. Esse controlador é caracterizado por ser um controlador simples e amplamente utilizado, é um controle de resposta de velocidade, com efeito linear. Apesar de ser amplamente utilizado, não é o ideal para processos complexos e não lineares ou variantes no tempo.
+Por último é mencionado o controlador fuzzy. Esse controlador é caracterizado por sua independência de uma modelagem matemática exata do objeto de controle, tendo sua essência em estratégias de autocontrole. A lógica fuzzy é capaz de lidar com sistemas não lineares e variantes no tempo, além de ser robusta a ruídos e perturbações externas.
 
 %O foco deste trabalho está em veículos submersos, mais especificamente em ROVs (Remotely Operated Vehicles). 
 %Por se tratar de veículos teleoperados, a operação dos ROVs apresenta diversos desafios, como perda de comunicação e falhas em equipamentos cruciais para seu funcionamento. 
 %Diante disso, torna-se necessário o desenvolvimento de técnicas capazes de lidar com as adversidades que surgem durante a operação, especialmente em situações em que o ROV não pode ser facilmente recuperado.
 
-Um conceito fundamental neste contexto é o de thruster. Thrusters são dispositivos responsáveis por impulsionar a embarcação, ou seja, são os propulsores que garantem sua movimentação. 
+Thrusters são dispositivos responsáveis por impulsionar a embarcação, ou seja, são os propulsores que garantem sua movimentação. 
 
 Um dos desafios enfrentados por veículos que utilizam thrusters é a possibilidade de falha em um ou mais desses dispositivos durante a operação, o que levanta a questão de como recuperar o controle do veículo ou garantir que ele continue navegando mesmo diante dessas falhas.
 
-Dessa forma, o objetivo principal deste trabalho é abordar o problema da falha de thrusters por meio da aplicação de um controle adaptativo tolerante a falhas (FTC -- Fault-Tolerant Control), através da otimização da redistribuição das forças restantes pós-falha, buscando manter a estabilidade e a funcionalidade do sistema mesmo em condições adversas.
+Dessa forma, o objetivo principal deste trabalho é abordar o problema da falha de thrusters através da otimização e redistribuição das forças restantes pós-falha, buscando manter a estabilidade e a funcionalidade do sistema mesmo em condições adversas.
 
-Os estudos relacionados ao FTC (Fault-Tolerant Control) serão aplicados ao robô BlueROV, um veículo subaquático do tipo ROV desenvolvido pela empresa BlueRobotics. A Figura~\ref{rov_view} apresenta uma representação visual do robô.
+Os estudos relacionados a otimização serão aplicados ao robô BlueROV, um veículo subaquático do tipo ROV desenvolvido pela empresa BlueRobotics. A Figura~\ref{rov_view} apresenta uma representação visual do robô.
 
 \begin{figure}[!htb]
   \centering

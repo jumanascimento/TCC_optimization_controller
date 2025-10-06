@@ -1,13 +1,13 @@
 # Fdb version 3
-["biber sections/1-introduction"] 1759515005 "sections/1-introduction.bcf" "sections/1-introduction.bbl" "sections/1-introduction" 1759515643
+["biber sections/1-introduction"] 1759515005 "sections/1-introduction.bcf" "sections/1-introduction.bbl" "sections/1-introduction" 1759779559
   "export.bib" 1759511446 4443 b6844363e7fcc0c373dc03eb46fb5241 ""
-  "sections/1-introduction.bcf" 1759515643 112030 bfa6ecef1ab0b4aad6161774044d29bc "pdflatex"
+  "sections/1-introduction.bcf" 1759779559 112030 bfa6ecef1ab0b4aad6161774044d29bc "pdflatex"
   (generated)
   "sections/1-introduction.bbl"
   "sections/1-introduction.blg"
-["pdflatex"] 1759515643 "/home/julia/Documents/TCC_optimization_controller/sections/1-introduction.tex" "sections/1-introduction.pdf" "1-introduction" 1759515643
+["pdflatex"] 1759779559 "/home/julia/Documents/TCC_optimization_controller/sections/1-introduction.tex" "sections/1-introduction.pdf" "1-introduction" 1759779559
   "/etc/texmf/web2c/texmf.cnf" 1677720038 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/julia/Documents/TCC_optimization_controller/sections/1-introduction.tex" 1759515643 6458 d63d8b3d3a96dbcf2a8167a69a0a86d0 ""
+  "/home/julia/Documents/TCC_optimization_controller/sections/1-introduction.tex" 1759779559 6320 0a996852298e0a3ba00c5920004b2cb5 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm" 1136768653 4712 9ef4d7d106579d4b136e1529e1a4533c ""
@@ -117,10 +117,10 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710438743 2801041 6d19ef88b3bf49a16d6be972f1465185 ""
   "images/vistas_bluerov (1) .png" 1759511446 196192 b58385753cdb72676beb82d97c370003 ""
   "sections/../main.tex" 1759503389 4102 a294b45b959aa7edbcdfc372b61ed4ac ""
-  "sections/1-introduction.aux" 1759515643 852 3366e13d85ab0d7c87690be7441732b4 "pdflatex"
+  "sections/1-introduction.aux" 1759779559 852 3366e13d85ab0d7c87690be7441732b4 "pdflatex"
   "sections/1-introduction.bbl" 1759515005 6437 dbdb99ef3a815fe6b8b071eedff35a83 "biber sections/1-introduction"
-  "sections/1-introduction.run.xml" 1759515643 2509 67a41cd804632ed24f9f165c5c0aa4bd "pdflatex"
-  "sections/1-introduction.tex" 1759515643 6458 d63d8b3d3a96dbcf2a8167a69a0a86d0 ""
+  "sections/1-introduction.run.xml" 1759779559 2509 67a41cd804632ed24f9f165c5c0aa4bd "pdflatex"
+  "sections/1-introduction.tex" 1759779559 6320 0a996852298e0a3ba00c5920004b2cb5 ""
   (generated)
   "sections/1-introduction.aux"
   "sections/1-introduction.bcf"

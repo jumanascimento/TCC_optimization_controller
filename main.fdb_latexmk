@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber main"] 1759503060 "main.bcf" "main.bbl" "main" 1759515025
+["biber main"] 1759503060 "main.bcf" "main.bbl" "main" 1759779591
   "export.bib" 1759511446 4443 b6844363e7fcc0c373dc03eb46fb5241 ""
-  "main.bcf" 1759515025 112657 b0a438312c1f56d05a3d7ebfaae52a81 "pdflatex"
+  "main.bcf" 1759779591 112657 b0a438312c1f56d05a3d7ebfaae52a81 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1759515024 "/home/julia/Documents/TCC_optimization_controller/main.tex" "main.pdf" "main" 1759515025
+["pdflatex"] 1759779590 "/home/julia/Documents/TCC_optimization_controller/main.tex" "main.pdf" "main" 1759779591
   "/etc/texmf/web2c/texmf.cnf" 1677720038 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/julia/Documents/TCC_optimization_controller/main.tex" 1759503389 4102 a294b45b959aa7edbcdfc372b61ed4ac ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -164,11 +164,11 @@
   "images/Alocaçao-thrusters-vetor-força-blureov2-light.png" 1759511446 157354 50b3ee172186b22256a736f3cf243531 ""
   "images/logotipo-SENAI-CIMATEC-Universidade-250 (1).png" 1759511446 12442 4b75e54375dda4b28d5400424067188b ""
   "images/vistas_bluerov (1) .png" 1759511446 196192 b58385753cdb72676beb82d97c370003 ""
-  "main.aux" 1759515025 3612 a59dbc0a04efe958b74953f92b703ef3 "pdflatex"
+  "main.aux" 1759779591 3612 a59dbc0a04efe958b74953f92b703ef3 "pdflatex"
   "main.bbl" 1759503061 9429 8c311576543441a3b27ca0e500b60038 "biber main"
-  "main.run.xml" 1759515025 2439 bb76beb0e5b93e3dab3980fde75e434f "pdflatex"
+  "main.run.xml" 1759779591 2439 bb76beb0e5b93e3dab3980fde75e434f "pdflatex"
   "main.tex" 1759503389 4102 a294b45b959aa7edbcdfc372b61ed4ac ""
-  "sections/1-introduction.tex" 1759515009 6384 3515511b22740d8c270871d6c3b79554 ""
+  "sections/1-introduction.tex" 1759779559 6320 0a996852298e0a3ba00c5920004b2cb5 ""
   "sections/2-previous-work.tex" 1759504050 5800 23011bfb132d1035408b368f7796a2f0 ""
   "sections/3-methodology.tex" 1759511446 0 d41d8cd98f00b204e9800998ecf8427e ""
   "sections/4-results.tex" 1759503131 2 e1c06d85ae7b8b032bef47e42e4c08f9 ""
