@@ -1,0 +1,86 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\graphicspath{{\subfix{../equations/rov-model/}}}
+\graphicspath{{\subfix{../equations/thruster-model/}}}
+
+% Adicionando comandos matemáticos necessários
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+
+A fundamentação teórica fundamental para modelagem de ROV é descrita em Fossen (Fossen, 2021), onde é demonstrado o modelo matemático para uma embarcação marítima com 6 DOFs. As equações de movimento adotadas do modelo dinâmico de Fossen contam com a equação de cinemática, equação~\ref{eq1}, e a equação de cinética, equação~\ref{eq2}.
+\input{equations/rov-model}
+Onde:
+\begin{itemize}
+    \item $J(\eta)$ -- É a matriz de transformação entre Body e NED;
+    \item $M$ -- É a matriz de massa total;
+    \item $C$ -- É a matriz de Coriolis;
+    \item $D$ -- É a matriz de amortecimento hidrostático;
+    \item $g$ -- É o vetor geral de restauração de força;
+\end{itemize}
+
+
+A equação~\ref{eq1} representa a cinemática do sistema, descrevendo assim os aspectos geométricos da movimentação do ROV em relação a diferentes coordenadas, enquanto a equação~\ref{eq2} representa a cinética do modelo, que consiste na análise de forças e momentos incluídas no ROV durante o movimento.
+
+Baseando-se nas equações de cinemática e cinética para 6 DOFs é possível modelar o sistema do BlueROV light, que só é capaz de se movimentar em 4 DOFs. Dessa forma, os graus de liberdade que não são acessados pelo robô são zerados nas matrizes.
+
+\subsection{Modelo e Alocação de Thruster}
+O modelo de ROV utilizado (BlueRov2 light) conta com 6 thrusters, como é possível visualizar na figura~\ref{force_diagram}, sendo esses 4 horizontais e 2 verticais, tendo sua configuração ilustrada também na figura~\ref{force_diagram}. Dessa forma, os thrusters dianteiros (1 e 2) giram no sentido anti-horário e os traseiros (3 e 4) giram no sentido horário.
+
+\begin{figure}[!htb]
+  \centering
+  \caption{Diagrama de thruster e forças.}
+  \includegraphics[width=0.45\textwidth]{images/Alocaçao-thrusters-vetor-força-blureov2-light.png}
+  \vfill
+  Fonte: Autores.
+  % \vspace{-\baselineskip}
+  \label{force_diagram}
+\end{figure}
+
+Apesar da configuração física atípica dos thrusters, posicionados em direções opostas, a alocação de forças foi corretamente realizada graças à rotação em sentidos contrários. Caso todos os thrusters rotacionassem no mesmo sentido, essa disposição geraria forças opostas, comprometendo o controle do sistema. No entanto, como evidenciado na Figura~\ref{force_diagram}, a rotação alternada dos thrusters soluciona esse problema, permitindo a geração das forças desejadas.
+
+Conforme apresentado por \cite{wu20186}, o modelo de um thruster pode ser apresentado de forma linear pela equação~\ref{eq1}. Onde a força do thruster é representada pelo vetor~\ref{force-vector}, os inputs de controle são representados por~\ref{control-input}, e os coeficientes de thruster são representados pela matriz diagonal~\ref{diagonal-K}.
+\input{equations/thruster-model}
+\modelA
+\vetorF
+\vetorU
+\vetorK
+
+Considerando o vetor de força $f$ em~\ref{given-force-vector} e o vetor de momentos $r$ em~\ref{moment-arms}, podemos calcular as forças e momentos em 6 DOFs pela seguinte fórmula:
+\vetorFmin
+\vetorR
+\modelB
+
+Considerando a limitação do BlueROV para somente 4 DOFs, é possível ajustar as equações~\ref{moment-arms} e~\ref{force-moments-6dof} para obter as forças em 4 DOFs como desejado. Sendo necessário zerar os momentos que não serão aplicados ao ROV, tendo como resultado então:
+\vetorRfour
+\modelfourdofs
+
+A alocação de controle é então modelada por:
+\generalisedTau
+Onde $T$ é a matriz de alocação, onde $T \in \mathbb{R}^{4 \times 6}$ e $\alpha$ é o vetor de ângulos de rotação dos thrusters, onde $\alpha \in \mathbb{R}^{6}$. Como consequência, a matriz de configuração de thruster $T$ pode ser calculada usando a equação~\ref{force-moments-4dof}. Uma vez determinadas as forças e momentos dos thrusters, é possível formalizar o problema da alocação, cujo objetivo é distribuir corretamente os esforços para os propulsores, para realizar a ação de controle desejada.
+
+\subsection{Alocação de controle}
+
+\cite{wu20186} define a alocação de controle como o processo que computa o sinal de entrada do controle $u$ e o aplica nos thrusters, de forma que o controle geral de forças $\tau$ possa ser gerado. Partindo da equação~\ref{force-moments-4dof}, é possível calcular o vetor de entradas de controle através da seguinte equação:
+\controlinput
+
+Contudo, levando em conta que a matriz $T$ é uma matriz não quadrática, é aplicada a Moore-Penrose pseudo-inversa $T^{+}$, dada por:
+\pseudoinverse
+
+Assim, podemos obter o vetor de entradas do controle por:
+\controlinputF
+
+\subsection{Formulação da Otimização}
+
+Em \cite{johansen2005efficient} é sugerida uma formulação de otimização para o problema de alocação de controle. É considerado então o seguinte problema de otimização: 
+\problemotimization
+
+A equação~\ref{problemotimization} está sujeita ao seguinte:
+\equesujeita
+\uminemax
+\util
+
+A variável $s$ é o termo que garante a constrição proposta em~\ref{uminemax}, que faz com que o resultado da força generalizada $Bu$ desvie das especificações de $\tau$ caso seja necessário. O segundo termo do critério corresponde ao critério de mínimos quadrados, enquanto o terceiro termo minimiza a maior força entre os atuadores, devido a~\ref{util}. O parâmetro $\beta\ge0$ controla a ponderação relativa desses dois critérios, permitindo que sejam tratados os compromissos entre o uso médio e o pior caso do controle.
+
+\end{document}

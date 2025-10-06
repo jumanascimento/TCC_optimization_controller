@@ -1,0 +1,144 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=2.5cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{newunicodechar}
+\usepackage[]{indentfirst}
+\usepackage{graphicx}
+\usepackage{subfiles}
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+
+% Definir caracteres Unicode problemáticos
+\newunicodechar{́}{\'{}}
+\newunicodechar{̃}{\~{}}
+\newunicodechar{̂}{\^{}}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{siunitx}
+% \usepackage[abnt-emphasize=bf, num]{abntex2cite}
+\usepackage[backend=biber, style=abnt]{biblatex}
+\addbibresource{export.bib}
+% ==== Pacotes ====
+\usepackage{graphicx}  % Inserir imagens
+\usepackage{helvet}    % Fonte similar ao Arial
+\usepackage{ragged2e} % para \justifying
+\renewcommand{\familydefault}{\sfdefault} % Define Arial/Helvetica como padrão
+\usepackage{setspace}  % Controle de espaçamento
+\usepackage{subcaption}
+\usepackage{gensymb}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{icomma}
+\usepackage{xurl}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\usepackage{makecell}
+\usepackage{epstopdf}
+
+
+\renewcommand\maketitle{
+    % === Inserir a imagem do cabeçalho ===
+    \begin{figure}[ht]
+        \centering
+        % Caminho fictício (substitua pelo real quando subir no Overleaf)
+        \includegraphics[width=0.3\textwidth]{images/logotipo-SENAI-CIMATEC-Universidade-250 (1).png} 
+    \end{figure}
+    
+    \begin{center}
+        \textbf{\MakeUppercase{Universidade Senai Cimatec}}
+        \\
+        \MakeUppercase{Graduação em Engenharia Elétrica}
+        
+        \vspace{\baselineskip}
+        
+        \begin{large}
+          \MakeUppercase{Otimização de thrusters para tolerância a falhas em veículos remotamente operados (ROVs) em 4 DOFs}
+        \end{large}
+    \end{center}
+
+    \begin{flushright}
+        Júlia Maria Nascimento Ribeiro\textsuperscript{1}\\
+        Orientador: Msc. Rebaca Tourinho Lima\textsuperscript{2}\\
+        Coorientador: Msc. Lucas Marins Batista\textsuperscript{3}\\
+    \end{flushright}
+    \begin{flushleft}
+      \begin{small}
+          \textsuperscript{1}Universidade Senai Cimatec, E-mail: julia.ribeiro@gmail.com;\\
+          \textsuperscript{2}Universidade Senai Cimatec, E-mail: rebeca.lima@fieb.org.br;\\
+          \textsuperscript{3}Universidade Senai Cimatec, E-mail: lucas.batista@fieb.org.br;\\
+        \end{small}
+      \end{flushleft}
+
+      \begin{center}
+        \begin{large}
+          \MakeUppercase{Thruster Optimization for Fault Tolerance in Remotely Operated Vehicles (ROVs) in 4 DOFs}
+        \end{large}
+      \end{center}
+
+    \noindent\textbf{Resumo:} 
+    \textit{A fazer}
+    \noindent\textbf{Palavras-Chaves:} 
+      \textit{xxxxx}    
+
+}
+
+\newcommand\makeabstract{
+  \noindent\textbf{Abstract:} 
+    \textit{TODO}
+
+  \vspace{0.4\baselineskip}
+
+  \noindent\textbf{Keywords:} 
+  \textit{xxxxx}
+
+  \vspace{\baselineskip}
+}
+
+% Comando para formatar a \section
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{12pt}{16}\selectfont} % Define a fonte para 14pt com espaçamento de 16pt entre linhas
+  {\thesection}
+  {1em}
+  {\MakeUppercase}
+
+
+\begin{document}    
+    \maketitle
+    \newpage
+    \makeabstract
+
+    \section{\MakeUppercase{Introdução}}
+    \label{sec:intro}
+    \subfile{sections/1-introduction.tex}
+
+    \section{\MakeUppercase{Fundamentação Teórica}}
+    \label{sec:fundamentacao_teorica}
+    \subfile{sections/2-previous-work.tex}
+
+    \section{\MakeUppercase{Metodologia}}
+    \label{sec:methodology}
+    \subfile{sections/3-methodology.tex}
+
+    \section{\MakeUppercase{Resultados e Discussão}}
+    \label{sec:results}
+    \subfile{sections/4-results.tex}
+
+    \section{\MakeUppercase{Considerações finais}}
+    \label{sec:conclusion}
+    \subfile{sections/5-conclusions.tex}
+
+    \section*{Agradecimentos}
+    % \label{sec:conclusion}
+    \subfile{sections/6-acknowledgment.tex}
+
+\printbibliography
+
+\end{document}

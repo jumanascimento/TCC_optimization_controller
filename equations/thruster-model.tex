@@ -1,0 +1,218 @@
+
+% modelA
+\newcommand{\modelA}{%
+\begin{equation}
+    F = Ku
+    \label{one_thruster_force}
+\end{equation}
+}
+
+% modelB
+\newcommand{\modelB}{%
+\begin{equation}
+    \tau =
+    \begin{bmatrix}
+    f \\
+    r \times f
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    F_{x} \\
+    F_{y} \\
+    F_{z} \\
+    F_{z}l_{y} - F_{y}l_{z} \\
+    F_{x}l_{z} - F_{z}l_{x} \\
+    F_{y}l_{x} - F_{x}l_{y}
+    \end{bmatrix}
+    \label{force-moments-6dof}
+\end{equation}
+}
+
+\newcommand{\modelfourdofs}{%
+\begin{equation}
+    \tau =
+    \begin{bmatrix}
+    f \\
+    r \times f
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    F_{x} \\
+    F_{y} \\
+    F_{z} \\
+    F_{y}l_{x} - F_{x}l_{y}
+    \end{bmatrix}
+    \label{force-moments-4dof}
+\end{equation}
+}
+
+% vetorF
+\newcommand{\vetorF}{%
+\begin{equation}
+    F =
+    \begin{bmatrix}
+    F_{1} & F_{2} & ... & F_{n}
+    \end{bmatrix}^{T}
+    \label{force-vector}
+\end{equation}
+}
+
+% vetorU
+\newcommand{\vetorU}{%
+\begin{equation}
+    u =
+    \begin{bmatrix}
+    u_{1} & u_{2} & ... & u_{n}
+    \end{bmatrix}^{T}
+    \label{control-input}
+\end{equation}
+}
+
+% vetorK
+\newcommand{\vetorK}{%
+\begin{equation}
+    K =
+    \begin{bmatrix}
+    K_{1} & K_{2} & ... & K_{n}
+    \end{bmatrix}
+    \label{diagonal-K}
+\end{equation}
+}
+
+% vetorFmin
+\newcommand{\vetorFmin}{%
+\begin{equation}
+    f =
+    \begin{bmatrix}
+    f_{x} & f_{y} & f_{z}
+    \end{bmatrix}^{T}
+    \label{given-force-vector}
+\end{equation}
+}
+
+% vetorR
+\newcommand{\vetorR}{%
+\begin{equation}
+    r =
+    \begin{bmatrix}
+    l_{x} & l_{y} & l_{z}
+    \end{bmatrix}^{T}
+    \label{moment-arms}
+\end{equation}
+}
+
+\newcommand{\vetorRfour}{%
+\begin{equation}
+    r =
+    \begin{bmatrix}
+    0 & 0 & l_{z}
+    \end{bmatrix}^{T}
+    \label{moment-arms-4d}
+\end{equation}
+}
+
+% generalisedTau
+\newcommand{\generalisedTau}{%
+\begin{equation}
+    \tau = T(\alpha)F = T(\alpha)Ku
+    \label{generalised-tau}
+\end{equation}
+}
+
+% vetorT
+\newcommand{\vetorT}{%
+\begin{equation}
+    T =
+    \begin{bmatrix}
+    t_{1} & t_{2} & t_{3} & t_{4} & t_{5} & t_{6} & t_{7} & t_{8}
+    \end{bmatrix}
+    \label{thrusters-config}
+\end{equation}
+}
+
+% t1Allocation
+\newcommand{\tOneAllocation}{%
+\begin{equation}
+    \tau_{1} =
+    \begin{bmatrix}
+    F_{1} \cos(\pi/4) \\
+    -F_{1} \sin(\pi/4) \\
+    0 \\
+    F_{1} \sin(\pi/4) \times 0.085 \\
+    F_{1} \cos(\pi/4) \times 0.085 \\
+    -F_{1} \sin(\pi/4) \times 0.156 - F_{1} \cos(\pi/4) \times 0.111
+    \end{bmatrix}
+    \label{tau1-allocation}
+\end{equation}
+}
+
+\newcommand{\tOneAllocationResult}{%
+\begin{equation}
+    \tau_{1} =
+    \begin{bmatrix}
+    0.707 \\
+    -0.707 \\
+    0 \\
+    0.06 \\
+    0.06 \\
+    -0.1888
+    \end{bmatrix}
+    \label{tau1-allocation-result}
+\end{equation}
+}
+
+\newcommand{\TpertenceR}{%
+\begin{equation}
+    T \in \mathbb{R}^{4 \times 6}
+    \label{TpertenceR}
+\end{equation}
+}
+
+\newcommand{\controlinput}{%
+\begin{equation}
+    u = K^{-1}T^{-1}\tau
+    \label{controlinput}
+\end{equation}
+}
+
+\newcommand{\pseudoinverse}{%
+\begin{equation}
+    T^{+}=T^{T}(TT^{T})^{-1}
+    \label{pseudoinverse}
+\end{equation}
+}
+
+\newcommand{\controlinputF}{%
+\begin{equation}
+    u=K^{-1}T^{+}\tau
+    \label{controlinputF}
+\end{equation}
+}
+
+\newcommand{\problemotimization}{%
+\begin{equation}
+    min_{u,s,\tilde{u}}(s^{T}Qs+u^{T}Wu+\beta\tilde{u})
+    \label{problemotimization}
+\end{equation}
+}
+
+\newcommand{\equesujeita}{%
+\begin{equation}
+    Tu=\tau+s
+    \label{equesujeita}
+\end{equation}
+}
+
+\newcommand{\uminemax}{%
+\begin{equation}
+    u_{min}\le u\le u_{max}
+    \label{uminemax}
+\end{equation}
+}
+
+\newcommand{\util}{%
+\begin{equation}
+    -\tilde{u}\le u_{1}, u_{2}, ..., u_{N}\le \tilde{u}
+    \label{util}
+\end{equation}
+}

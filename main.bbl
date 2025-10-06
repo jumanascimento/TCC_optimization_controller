@@ -1,0 +1,237 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{biazon2017profundezas}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c3fc9501a1d36f61242b318a31790fbc}{%
+           family={Biazon},
+           familyi={B\bibinitperiod},
+           given={Tássia},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c3fc9501a1d36f61242b318a31790fbc}
+      \strng{fullhash}{c3fc9501a1d36f61242b318a31790fbc}
+      \strng{bibnamehash}{c3fc9501a1d36f61242b318a31790fbc}
+      \strng{authorbibnamehash}{c3fc9501a1d36f61242b318a31790fbc}
+      \strng{authornamehash}{c3fc9501a1d36f61242b318a31790fbc}
+      \strng{authorfullhash}{c3fc9501a1d36f61242b318a31790fbc}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Marı́tima Brasileira}
+      \field{number}{0709}
+      \field{title}{Nas profundezas dos oceanos}
+      \field{volume}{137}
+      \field{year}{2017}
+      \field{pages}{66\bibrangedash 82}
+      \range{pages}{17}
+    \endentry
+    \entry{johansen2005efficient}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=a9a86ebeca0cd008a601339e86e19fae}{%
+           family={Johansen},
+           familyi={J\bibinitperiod},
+           given={Tor\bibnamedelima A},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8eca0c434dd587f3eff346c053ba5948}{%
+           family={Fossen},
+           familyi={F\bibinitperiod},
+           given={Thor\bibnamedelima I},
+           giveni={T\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=08f50a8f46c42e45104ba4ffafdf00cf}{%
+           family={T{ø}ndel},
+           familyi={T\bibinitperiod},
+           given={Petter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
+      \strng{fullhash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
+      \strng{bibnamehash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
+      \strng{authorbibnamehash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
+      \strng{authornamehash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
+      \strng{authorfullhash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of guidance, control, and dynamics}
+      \field{number}{3}
+      \field{title}{Efficient optimal constrained control allocation via multiparametric programming}
+      \field{volume}{28}
+      \field{year}{2005}
+      \field{pages}{506\bibrangedash 515}
+      \range{pages}{10}
+    \endentry
+    \entry{OSHA2023}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4c494074a916bd3af06330ce20c4a84c}{%
+           family={{Occupational Safety and Health Administration}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \name{shortauthor}{1}{}{%
+        {{un=0,uniquepart=base,hash=7b95917312740e2be161a373be1bdce9}{%
+           family={OSHA},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {U.S. Department of Labor}%
+      }
+      \strng{namehash}{7b95917312740e2be161a373be1bdce9}
+      \strng{fullhash}{4c494074a916bd3af06330ce20c4a84c}
+      \strng{bibnamehash}{7b95917312740e2be161a373be1bdce9}
+      \strng{authorbibnamehash}{4c494074a916bd3af06330ce20c4a84c}
+      \strng{authornamehash}{4c494074a916bd3af06330ce20c4a84c}
+      \strng{authorfullhash}{4c494074a916bd3af06330ce20c4a84c}
+      \strng{shortauthorbibnamehash}{7b95917312740e2be161a373be1bdce9}
+      \strng{shortauthornamehash}{7b95917312740e2be161a373be1bdce9}
+      \strng{shortauthorfullhash}{7b95917312740e2be161a373be1bdce9}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{shortauthor}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 18 ago. 2025}
+      \field{title}{Commercial Diving: Hazards and Solutions}
+      \field{urlday}{15}
+      \field{urlmonth}{11}
+      \field{urlyear}{2023}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.osha.gov/commercial-diving/hazards-solutions
+      \endverb
+      \verb{url}
+      \verb https://www.osha.gov/commercial-diving/hazards-solutions
+      \endverb
+    \endentry
+    \entry{petrobras2024}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7c4df8f6cb50526502e2abcd4a153887}{%
+           family={{Petrobras}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Petrobras}%
+      }
+      \strng{namehash}{7c4df8f6cb50526502e2abcd4a153887}
+      \strng{fullhash}{7c4df8f6cb50526502e2abcd4a153887}
+      \strng{bibnamehash}{7c4df8f6cb50526502e2abcd4a153887}
+      \strng{authorbibnamehash}{7c4df8f6cb50526502e2abcd4a153887}
+      \strng{authornamehash}{7c4df8f6cb50526502e2abcd4a153887}
+      \strng{authorfullhash}{7c4df8f6cb50526502e2abcd4a153887}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{acessado em 18 de agosto de 2025}
+      \field{title}{Relatório de Sustentabilidade Petrobras 2024}
+      \field{type}{Relatório de Sustentabilidade}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://issuu.com/estantepetrobras/docs/relat_rio_de_sustentabilidade_petrobras_-_2024
+      \endverb
+      \verb{url}
+      \verb https://issuu.com/estantepetrobras/docs/relat_rio_de_sustentabilidade_petrobras_-_2024
+      \endverb
+    \endentry
+    \entry{wu20186}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1b82ca495ce382c44a394ab473ba4b4b}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Chu-Jou},
+           giveni={C\bibinithyphendelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{2}{%
+        {Flinders University, College of Science}%
+        {Engineering.}%
+      }
+      \strng{namehash}{1b82ca495ce382c44a394ab473ba4b4b}
+      \strng{fullhash}{1b82ca495ce382c44a394ab473ba4b4b}
+      \strng{bibnamehash}{1b82ca495ce382c44a394ab473ba4b4b}
+      \strng{authorbibnamehash}{1b82ca495ce382c44a394ab473ba4b4b}
+      \strng{authornamehash}{1b82ca495ce382c44a394ab473ba4b4b}
+      \strng{authorfullhash}{1b82ca495ce382c44a394ab473ba4b4b}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{6-dof modelling and control of a remotely operated vehicle}
+      \field{type}{phdthesis}
+      \field{year}{2018}
+    \endentry
+    \entry{8559384}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4f03e7f12189eb881b9b6910d8491b96}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Jiankang},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a766f0e2c24e1cc8e05b56d8e9d180c4}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Nan},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8705824a57aac5164658a5eb1621d221}
+      \strng{fullhash}{8705824a57aac5164658a5eb1621d221}
+      \strng{bibnamehash}{8705824a57aac5164658a5eb1621d221}
+      \strng{authorbibnamehash}{8705824a57aac5164658a5eb1621d221}
+      \strng{authornamehash}{8705824a57aac5164658a5eb1621d221}
+      \strng{authorfullhash}{8705824a57aac5164658a5eb1621d221}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 OCEANS - MTS/IEEE Kobe Techno-Oceans (OTO)}
+      \field{title}{Optimization of ROV Control Based on Genetic Algorithm}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/OCEANSKOBE.2018.8559384
+      \endverb
+      \keyw{Genetic algorithms;Interference;PI control;PD control;Fuzzy logic;Fuzzy control;Oceans;ROV;GA;Fuzzy-PID;anti-jamming;Automatic control}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'sections/2-previous-work.blg'
+[41] biber:340> INFO - === sex out  3, 2025, 12:06:13
+[49] Biber.pm:418> INFO - Reading 'sections/2-previous-work.bcf'
+[90] Biber.pm:972> INFO - Found 2 citekeys in bib section 0
+[99] Biber.pm:4383> INFO - Processing section 0
+[106] Biber.pm:4574> INFO - Looking for bibtex file 'export.bib' for section 0
+[106] bibtex.pm:1713> INFO - LaTeX decoding ...
+[111] bibtex.pm:1518> INFO - Found BibTeX data source 'export.bib'
+[140] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[140] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[141] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[141] Biber.pm:4209> INFO - No sort tailoring available for locale 'pt-BR'
+[142] bbl.pm:654> INFO - Writing 'sections/2-previous-work.bbl' with encoding 'UTF-8'
+[143] bbl.pm:757> INFO - Output to sections/2-previous-work.bbl
