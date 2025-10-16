@@ -21,9 +21,45 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{siunitx}
-% \usepackage[abnt-emphasize=bf, num]{abntex2cite}
+\usepackage{placeins}  % Para usar \FloatBarrier
+\usepackage{float}     % Para usar [H] - posição fixa
+
+% Configuração para citações ABNT
+%\usepackage[abnt-emphasize=bf, num]{abntex2cite}
 \usepackage[backend=biber, style=abnt]{biblatex}
+
+% Configurar títulos em negrito conforme ABNT NBR 6023:2018
+\DeclareFieldFormat{title}{\textbf{#1}}
+\DeclareFieldFormat{booktitle}{\textbf{#1}}
+\DeclareFieldFormat[article]{title}{\textbf{#1}}
+\DeclareFieldFormat[book]{title}{\textbf{#1}}
+\DeclareFieldFormat[inproceedings]{title}{\textbf{#1}}
+\DeclareFieldFormat[thesis]{title}{\textbf{#1}}
+\DeclareFieldFormat[phdthesis]{title}{\textbf{#1}}
+\DeclareFieldFormat[misc]{title}{\textbf{#1}}
+
+% Suprimir o campo type para teses
+\DeclareFieldFormat[phdthesis]{type}{}
+\DeclareFieldFormat[mastersthesis]{type}{}
+\DeclareFieldFormat[thesis]{type}{}
+
 \addbibresource{export.bib}
+% Remover formatação especial de títulos - todos iguais sem negrito
+% \DeclareFieldFormat{title}{#1}
+% \DeclareFieldFormat{booktitle}{#1}
+% \DeclareFieldFormat[article]{title}{#1}
+% \DeclareFieldFormat[book]{title}{#1}
+% \DeclareFieldFormat[journal]{title}{#1}
+% \DeclareFieldFormat[inproceedings]{title}{#1}
+% \DeclareFieldFormat[thesis]{title}{#1}
+% \DeclareFieldFormat[misc]{title}{#1}
+
+% Configurar strings em português para URLs
+% \DefineBibliographyStrings{brazilian}{%
+%   urlfrom = {Disponível em},
+%   urlseen = {Acesso em},
+% }
+
 % ==== Pacotes ====
 \usepackage{graphicx}  % Inserir imagens
 \usepackage{helvet}    % Fonte similar ao Arial
@@ -118,18 +154,22 @@
     \section{\MakeUppercase{Introdução}}
     \label{sec:intro}
     \subfile{sections/1-introduction.tex}
+    \FloatBarrier
 
     \section{\MakeUppercase{Fundamentação Teórica}}
     \label{sec:fundamentacao_teorica}
     \subfile{sections/2-previous-work.tex}
+    \FloatBarrier
 
     \section{\MakeUppercase{Metodologia}}
     \label{sec:methodology}
     \subfile{sections/3-methodology.tex}
+    \FloatBarrier
 
     \section{\MakeUppercase{Resultados e Discussão}}
     \label{sec:results}
     \subfile{sections/4-results.tex}
+    \FloatBarrier
 
     \section{\MakeUppercase{Considerações finais}}
     \label{sec:conclusion}
