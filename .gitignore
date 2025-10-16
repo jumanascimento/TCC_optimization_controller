@@ -1,0 +1,69 @@
+# LaTeX compilation files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.out
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Additional LaTeX temporary files
+*.auxlock
+*.figlist
+*.makefile
+*.upa
+*.upb
+*.brf
+*.cb
+*.cb2
+*.end
+*.fmt
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lol
+*.ptc
+*.sta
+*.soc
+
+# Biber
+*.bib.bak
+*.bib.sav
+
+# Build tool auxiliary files
+*.latexmain
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor backup files
+*~
+*.swp
+*.swo
+*#
+
+# Keep these files:
+# *.tex (all LaTeX source files)
+# *.pdf (compiled PDFs)
+# *.bib (bibliography files)
+# *.png, *.jpg, *.jpeg (images)
+# *.cls, *.sty (LaTeX class and style files)
