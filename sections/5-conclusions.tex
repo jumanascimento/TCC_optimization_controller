@@ -1,0 +1,9 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+
+O presente trabalho abordou o desenvolvimento e e validação de um algoritimo de otimização para tolerância a falha em veículos subaquaticos,mais especificamente no \textit{BlueROV2 Standard}, que possui 4 DOFs e 6 thrusters. O objetivo principal foi concervar a navegabilidade do veículo em casos de falta total de um ou mias \textit{thrusters}. A metodologia proposta envolveu a implementação do algoritmo em um ambiente de simulação utilizando, com os testes foi possível constatar a eficiencia do algoritmo proposto, o mesmo sofre com limitações causadas polo \textit{hardware} do veículo.
+Os resultados obtidos demonstram que o algoritmo de otimização proposto é eficaz na redistribuição das forças entre os \textit{thrusters} remanescentes, permitindo que o ROV mantenha sua navegabilidade mesmo em situações de falha, desde que as condições mínimas de navegabilidade sejam mantidas. A análise comparativa entre os cenários com e sem otimização evidenciou uma redução significativa do erro medio em alguns casos de falha, e se mostrando ineficnete em outros, o que indica que a eficácia do algoritmo está diretamente relacionada à configuração dos \textit{thrusters} e ao tipo de falha ocorrida.
+Além disso, o estudo ressaltou a importância de considerar as limitações físicas e operacionais do veículo ao projetar algoritmos de tolerância a falhas, destacando que a redistribuição das forças deve ser cuidadosamente planejada para garantir a estabilidade e o controle do ROV.
+
+\end{document}

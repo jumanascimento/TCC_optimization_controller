@@ -2,18 +2,16 @@
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
-A metodologia proposta neste trabalho consiste no desenvolvimento e validação de um algoritmo de otimização voltado à redistribuição de forças em veículos subaquáticos (BlueROV2), com o objetivo de manter a navegabilidade do sistema em caso de falha total de um ou mais thrusters.
+A metodologia proposta neste trabalho consiste no desenvolvimento e validação de um algoritmo de otimização voltado à redistribuição de forças em veículos subaquáticos (\textit{BlueROV2}), com o objetivo de manter a navegabilidade do sistema em caso de falha total de um ou mais \textit{thrusters}.
 
-Os testes serão conduzidos em ambiente de simulação, utilizando o sistema operacional Ubuntu 22.04, juntamente com o simulador Gazebo Ignition e o ROS2 control. O modelo de ROV simulado será o \textit{BlueROV2 Standard}, sendo ele utilizado para representar o comportamento dinâmico do veículo e validar o desempenho do algoritmo proposto.
+Os experimentos foram conduzidos em ambiente de simulação, utilizando o sistema operacional Ubuntu 22.04, o simulador Gazebo Ignition e o framework ROS 2 Control. O modelo \textit{BlueROV2 Standard} foi adotado como base para representar o comportamento dinâmico do veículo e verificar o desempenho do método proposto. O controle do ROV é feito por um controlador de alocação de esforços, responsável por distribuir as forças entre os \textit{thrusters}. O algoritmo de otimização será integrado em paralelo com o controle de alocação, de modo a realizar a redistribuição adaptativa das forças quando houver falha em um ou mais propulsores. Vale destacar que o reconhecimento de falha não é abordado neste trabalho, por ser um desafio à parte da otimização das forças.
 
-A arquitetura de controle do ROV é composta por um controlador PID responsável pela estabilização da malha principal e por um controlador de alocação de esforços, responsável por distribuir as forças entre os thrusters. O algoritmo de otimização será integrado em paralelo com o controle de alocação, de modo a realizar a redistribuição adaptativa das forças quando houver falha em um ou mais propulsores. Vale destacar que o reconhecimento de falha não é abordado neste trabalho, por ser um desafio à parte da otimização das forças.
-
-O diagrama do fluxo de controle proposto é apresentado na Figura \ref{control_logic}, ilustrando o fluxo de controle e as saídas e entradas do sistema, além de destacar a integração entre os controladores e o algoritmo de otimização. O desempenho do algoritmo será avaliado com base em dois critérios principais: a velocidade de movimentação do ROV em determinada direção e o erro de deslocamento, em caso de falha de um ou mais thrusters, para determinada direção.
+O diagrama do fluxo de controle proposto é apresentado na Figura \ref{control_logic}, destacando a interação entre o controlador de alocação e o algoritmo de otimização, bem como as entradas e saídas do sistema. O desempenho do algoritmo será avaliado com base na comparação entre o erro medio obtido com e sem o algoritmo e o desvio padrão do erro, considerando dois critérios principais: a velocidade de movimentação do ROV em determinada direção e o erro de deslocamento, em caso de falha de um ou mais \textit{thrusters}, para determinada direção.
 
 \begin{figure}[H]
   \centering
   \caption{Fluxo de controle.}
-  \includegraphics[width=0.7\textwidth]{images/control_logic.drawio.png}
+  \includegraphics[width=0.7\textwidth]{images/malha_atualizada.drawio.png}
   \vfill
   Fonte: Autores.
   % \vspace{-\baselineskip}
@@ -22,5 +20,48 @@ O diagrama do fluxo de controle proposto é apresentado na Figura \ref{control_l
 
 A partir dessas análises é esperado verificar a robustez e a eficiência do método de otimização proposto em comparação ao controle convencional sem a tolerância a falhas.
 
+\subsection{Metodologia experimental}
+A validação do algoritmo de otimização será realizada por meio do seguinte procedimento experimental:
+
+Foram estabelecidos três cenários de teste, cinco casos de falhas e quatro trajetórias, conforme detalhado na Tabela \ref{tab:metodologia_experimental}:
+
+\begin{table}[H]
+\centering
+\footnotesize
+\sffamily
+\caption{Configuração experimental: cenários, casos de falhas e trajetórias}
+\vspace{0.5em}
+\begin{tabular}{cp{3.2cm}cp{3.8cm}p{2.2cm}}
+\toprule
+\multicolumn{2}{c}{\textbf{Cenários}} & \multicolumn{2}{c}{\textbf{Casos de Falhas}} & \textbf{Trajetórias} \\
+\cmidrule(lr){1-2} \cmidrule(lr){3-4} \cmidrule(l){5-5}
+\textbf{ID} & \textbf{Descrição} & \textbf{ID} & \textbf{Tipo de Falha} & \textbf{Movimento} \\
+\midrule
+1 & Sem falhas e sem otimização & 1 & Dois \textit{thrusters} horizontais coincidentes & 1. \textit{Surge} (X) \\
+\addlinespace[0.1em]
+2 & Com falhas e sem otimização & 2 & Dois \textit{thrusters} horizontais paralelos & 2. \textit{Sway} (Y) \\
+\addlinespace[0.1em]
+3 & Com falhas e com otimização & 3 & Dois \textit{thrusters} horizontais diagonais & 3. \textit{Heave} (Z) \\
+\addlinespace[0.1em]
+& & 4 & Um \textit{thruster} horizontal e um vertical & 4. \textit{Yaw} (rot. Z) \\
+\addlinespace[0.1em]
+& & 5 & Um \textit{thruster} horizontal & \\
+\bottomrule
+\end{tabular}
+\label{tab:metodologia_experimental}
+\end{table}
+
+\vspace{0.3em}
+\begin{center}
+{\footnotesize Fonte: Autores.}
+\end{center}
+
+Os testes foram realizados para o intervalo de tempo de 30 segundos para cada tipo de trajetória, a fim de observar o comportamento do sistema ao longo do tempo. Cada combinação de cenário, caso e tempo foi repetida cinco vezes.
+
+O metodo de teste para \textit{Heave} e \textit{Yaw} foram diferentes dos outros, devido a limitações fisicas do ROV. Para o movimento de \textit{Heave}, foi somente ralizado o caso 4, pois esse é o unico que afeta o movimento vertical do ROV, e para o movimento de \textit{Yaw}, foram realizados (tipos de teste para yaw a definir)
+
+As trajetorias são realizadas a partir de uma força de \textit{wrench} aplicada nos \textit{thrusters} do ROV, o que gera um movimento relacionado ao tipo de trajétorio, ou seja, a trajétoria \textit{surge} não se trata do movimento perfeito naquela direção, mas sim de uma força em X, gerando um movimento naquela direção, ainda estando sujeito as forças presentes no ambiente simulado.
+
+Os dados coletados serão analisados estatisticamente, utilizando métricas como o erro medio e desvio padrão, para analisar o efeito do algoritmo de otimização em relação a cada tipo de falta em relação as trajetórias quando comparadas ao caso original de pleno funcionamento. Essas análises permitirão avaliar a eficácia do algoritmo de otimização na manutenção da navegabilidade do ROV em diferentes cenários de falhas.
 
 \end{document}

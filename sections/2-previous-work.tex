@@ -32,7 +32,7 @@ O modelo de ROV utilizado (BlueROV2 standard) conta com 6 thrusters, como é pos
 \begin{figure}[H]
   \centering
   \caption{Diagrama de thruster e forças.}
-  \includegraphics[width=0.7\textwidth]{images/Alocaçao-thrusters-vetor-força-blureov2-light.png}
+  \includegraphics[width=0.7\textwidth]{images/Alocaçao-thrusters-vetor-força-blureov2-heavy (6).png}
   \vfill
   Fonte: Autores.
   % \vspace{-\baselineskip}
@@ -41,7 +41,7 @@ O modelo de ROV utilizado (BlueROV2 standard) conta com 6 thrusters, como é pos
 
 Apesar da configuração física atípica dos thrusters, posicionados em direções opostas, a alocação de forças foi corretamente realizada graças à rotação em sentidos contrários. Caso todos os thrusters rotacionassem no mesmo sentido, essa disposição geraria forças opostas, comprometendo o controle do sistema. No entanto, como evidenciado na Figura~\ref{force_diagram}, a rotação alternada dos thrusters soluciona esse problema, permitindo a geração das forças desejadas.
 
-Conforme apresentado por \cite{wu20186}, o modelo de um thruster pode ser apresentado de forma linear pela Equação~\ref{eq1}. Onde a força do thruster é representada pelo vetor~\ref{force-vector}, os inputs de controle são representados por~\ref{control-input}, e os coeficientes de thruster são representados pela matriz diagonal~\ref{diagonal-K}.
+Conforme apresentado por \textcite{wu20186}, o modelo de um thruster pode ser apresentado de forma linear pela Equação~\ref{eq1}. Onde a força do thruster é representada pelo vetor~\ref{force-vector}, os inputs de controle são representados por~\ref{control-input}, e os coeficientes de thruster são representados pela matriz diagonal~\ref{diagonal-K}.
 \input{equations/thruster-model}
 \modelA
 \vetorF
@@ -63,7 +63,7 @@ Sendo $T$ a matriz de alocação, onde $T \in \mathbb{R}^{4 \times 6}$ e $\alpha
 
 \subsection{Alocação de controle}
 
-\cite{wu20186} define a alocação de controle como o processo que computa o sinal de entrada do controle $u$ e o aplica nos thrusters, de forma que o controle geral de forças $\tau$ possa ser gerado. Partindo da Equação~\ref{force-moments-4dof}, é possível calcular o vetor de entradas de controle através da seguinte equação:
+\textcite{wu20186} define a alocação de controle como o processo que computa o sinal de entrada do controle $u$ e o aplica nos thrusters, de forma que o controle geral de forças $\tau$ possa ser gerado. Partindo da Equação~\ref{force-moments-4dof}, é possível calcular o vetor de entradas de controle através da seguinte equação:
 \controlinput
 
 Contudo, levando em conta que a matriz $T$ é uma matriz não quadrática, é aplicada a Moore-Penrose pseudo-inversa $T^{+}$, dada por:
