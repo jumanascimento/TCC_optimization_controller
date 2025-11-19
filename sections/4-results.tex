@@ -4,19 +4,19 @@
 
 Nesta seção, são apresentados os resultados obtidos a partir dos experimentos conduzidos para avaliar o desempenho do algoritmo de otimização proposto na metodologia. Os resultados são organizados em tabelas que ilustram o impacto do algoritmo na navegabilidade do ROV em diferentes cenários de falhas.
 
-\subsection{Combinações Mínimas de Thrusters}
+\subsection{Combinações Mínimas de \textit{Thrusters}}
 
-Na Tabela~\ref{tab:comb_thrusters}, são apresentadas as combinações mínimas de thrusters necessários para manter a navegabilidade do ROV em cada direção de movimento (\textit{surge, sway, heave, yaw}), considerando os diferentes casos de falhas simuladas.
+Na Tabela~\ref{tab:comb_thrusters}, são apresentadas as combinações mínimas de \textit{thrusters} necessários para manter a navegabilidade do ROV em cada direção de movimento (\textit{surge, sway, heave, yaw}), considerando os diferentes casos de falhas simuladas.
 
 \begin{table}[htbp]
 \centering
 \small
 \sffamily
-\caption{Combinações mínimas de thrusters por direção (\textit{surge, sway, heave, yaw})}
+\caption{Combinações mínimas de \textit{thrusters} por direção (\textit{surge, sway, heave, yaw})}
 \vspace{0.3em}
 \begin{tabular}{ll}
 \toprule
-\textbf{Direção} & \textbf{Combinação Mínima de Thrusters} \\
+\textbf{Direção} & \textbf{Combinação Mínima de \textit{Thrusters}} \\
 \midrule
 \textbf{Surge} & Dois \textit{thrusters} paralelos ou diagonais \\
 \textbf{Sway} & Dois \textit{thrusters} laterais ou diagonais \\
@@ -30,11 +30,15 @@ Na Tabela~\ref{tab:comb_thrusters}, são apresentadas as combinações mínimas 
 {\footnotesize Fonte: Autores.}
 \end{center}
 
-A partir da Tabela~\ref{tab:comb_thrusters}, é possível observar que alguns casos de falhas caem fora das combinações mínimas necessárias para manter a navegabilidade do ROV em determinadas direções. Isso indica que, em tais situações, o algoritmo de otimização não conseguiu redistribuir as forças de maneira eficaz para compensar a ausência dos thrusters falhos, resultando na incapacidade do ROV de se mover conforme desejado.
+A partir da Tabela~\ref{tab:comb_thrusters}, é possível observar que alguns casos de falhas caem fora das combinações mínimas necessárias para manter a navegabilidade do ROV em determinadas direções. Isso indica que, em tais situações, o algoritmo de otimização pode não redistribuir as forças de maneira eficaz para compensar a ausência dos \textit{thrusters} falhos, resultando na incapacidade do ROV de se mover conforme desejado. 
 
-\subsection{Resultados da Direção Surge}
+Destaca-se o Caso 3 como um cenário particular, onde o algoritmo de otimização apresenta impacto limitado em todas as direções de movimento (\textit{surge}, \textit{sway} e \textit{yaw}), com desempenho equivalente ou apenas marginalmente superior ao caso sem otimização. Essa característica sugere que a configuração específica de falhas do Caso 3 permite ao ROV manter navegabilidade adequada independentemente da aplicação do algoritmo, vindo da redundância natural dos \textit{thrusters} restantes.
+
+\subsection{Análise dos Resultados por Direção de Movimento}
 
 A Tabela~\ref{tab:erro_direcao_surge} apresenta os erros médios obtidos após as repetições dos testes para a direção \textit{Surge}. Os erros foram obtidos comparando a trajetória ideal sem o algoritmo de otimização com as trajetórias realizadas em cada caso de falha, tanto com o algoritmo de otimização (COM) quanto sem o algoritmo (SEM).
+
+Nos casos apresentados a seguir, é possível observar que os casos que apresentam o otimizador apresentaram erros menores em relação à velocidade e à distância final alcançada, mostrando a capacidade do algoritmo em manter a navegabilidade do ROV mesmo em situações de falha nos \textit{thrusters}. O algoritmo demonstra especial eficácia na redução da variabilidade dos resultados, como evidenciado no Caso 2, onde o desvio padrão da velocidade foi reduzido de 0,008 sem otimização, para 0,004 com otimização (redução de 50\%) e o desvio padrão da distância percorrida foi reduzido de 0,247 m para 0,115 m (redução de 53\%) com o uso da otimização.
 
 % Tabela formatada conforme normas SENAI CIMATEC/ABNT
 \begin{table}[H]
@@ -43,114 +47,112 @@ A Tabela~\ref{tab:erro_direcao_surge} apresenta os erros médios obtidos após a
 \sffamily % Fonte sans-serif (Arial/Helvetica)
 
 % Título acima da tabela conforme orientações
-\caption{Erro medio por Direção (\textit{Surge})}
+\caption{Erro médio por Direção (\textit{Surge})}
 
 \vspace{0.5em}
 
-% Tabela sem linhas verticais, usando booktabs
-\begin{tabular}{p{0.3cm}lcccccccc}
+% Tabela sem linhas verticais, usando booktabs com resizebox
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{0.3cm}lcccccc}
 \toprule
 \textbf{Caso} & &\textbf{Vel (m/s)} & \textbf{Distância (m)} & \textbf{X (m)} & \textbf{Y (m)} & \textbf{Z (m)} & \textbf{yaw (°)} \\
 \midrule
-\multirow{2}{*}{\textbf{1}} & COM & 0,005$\pm$0,031 & 0,448$\pm$0,101 &-7,198$\pm$0,105 & 1,040$\pm$0 & 0,013$\pm$0,014 & -360$\pm$0 \\
- & SEM & 0,096$\pm$0,005 & 3,475$\pm$0,117 & 7,105$\pm$0,108 & -1,116$\pm$0 & 0,014$\pm$0,008 & -360$\pm$0 \\
+\multirow{2}{*}{\textbf{1}} & COM & 0,005 & 0,448 &-7,198 & 1,040 & 0,013 & -360 \\
+ & SEM & 0,096 & 3,475 & 7,105 & -1,116 & 0,014 & -360 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{2}} & COM & -0,025$\pm$0,004	&-0,024$\pm$0,115 & -0,068$\pm$0,120	&-0,01$\pm$0,001	&0,041$\pm$0,003	&-0,1$\pm$0\\
- & SEM & 0,091$\pm$0,008	&3,630$\pm$0,247	&3,592$\pm$0,247	&0,00$\pm$0	&0,038$\pm$0,004	&0$\pm$0\\
+\multirow{2}{*}{\textbf{2}} & COM & -0,025 &-0,024 & -0,068 &-0,01 &0,041 &-0,1\\
+ & SEM & 0,091 &3,630 &3,592 &0,00 &0,038 &0\\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{3}} & COM & 0,037$\pm$0,010 &1,716$\pm$0,122 &5,237$\pm$1,159 &-3,770$\pm$0,027 &-0,088$\pm$0,180 &-11,4$\pm$0,089 \\
- & SEM &0,033$\pm$0,013 &1,684$\pm$0,328 &3,003$\pm$0,282 &-3,820$\pm$0,152 &0,006$\pm$0,023 &-11,6$\pm$0,515 \\
+\multirow{2}{*}{\textbf{3}} & COM & 0,037 &1,716 &5,237 &-3,770 &-0,088 &-11,4 \\
+ & SEM &0,033 &1,684 &3,003 &-3,820 &0,006 &-11,6 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{4}} & COM &-0,006$\pm$0,013 &-0,171$\pm$0,132 &-0,209$\pm$0,116 &-0,49$\pm$0,088 &-0,002$\pm$0,028 &-6,9$\pm$0,612 \\
- & SEM & 0,027$\pm$0,004 & 0,939$\pm$0,252 & 5,823$\pm$0,089 & -3,39$\pm$0 & 0,012$\pm$0,005 & -360$\pm$0 \\
+\multirow{2}{*}{\textbf{4}} & COM &-0,006 &-0,171 &-0,209 &-0,49 &-0,002 &-6,9 \\
+ & SEM & 0,027 & 0,939 & 5,823 & -3,39 & 0,012 & -360 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{5}} & COM & -0,007$\pm$0,010 & -0,008$\pm$0,181 & -0,008$\pm$0,177 & -0,38$\pm$0,012 & 0,012$\pm$0,022 & -6,18$\pm$0,098 \\
- & SEM & 0,025$\pm$0,007 & 1,129$\pm$0,013 & 5,862$\pm$0,017 & -3,39$\pm$0 & 0,016$\pm$0,013 & -360$\pm$0 \\
+\multirow{2}{*}{\textbf{5}} & COM & -0,007 & -0,008 & -0,008 & -0,38 & 0,012 & -6,18 \\
+ & SEM & 0,025 & 1,129 & 5,862 & -3,39 & 0,016 & -360 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \label{tab:erro_direcao_surge}
 \end{table}
-
-\vspace{0.3em}
 \begin{center}
 {\footnotesize Fonte: Autores.}
 \end{center}
 
-Além disso, é possível observar que nos casos onde a combinação mínima de thrusters não é atendida, o algoritmo de otimização não consegue compensar adequadamente a falta dos propulsores, resultando em erros mais elevados. Isso evidencia a importância de uma configuração adequada dos thrusters para garantir a eficácia do algoritmo de otimização na manutenção da navegabilidade do ROV. Mesmo com o impacto na trajetória, o algoritmo de otimização ainda apresenta melhoras em relação a velocidade media do ROV e a distancia percorrida, quando comparado ao caso sem otimização. É possivel visualizar o impacto disposição insatisfatoria de \textit{thrusters} no caso~1, onde apesar de apresentar um melhora na velocidade media e na distancia percorrida no caso com otimização em relação ao caso sem otimização, ainda apresenta um erro de~360° na orientação \textit{yaw}, indicando a impossibilidade do ROV manter a trajetoria desejada em~\textit{Surge}.
-
-A figura \ref{surge_trajectories} ilustra as trajetórias do ROV para a direção \textit{Surge} nos casos 0 (ideal), 1, 2 e 5, com o algoritmo de otimização em ação. Observa-se que no caso 1, onde a combinação mínima de thrusters não é atendida, o ROV apresenta uma trajetória significativamente desviada da ideal, evidenciando a incapacidade do algoritmo de otimização em compensar a falha dos thrusters, devido a limitação de \textit{hardware} do ROV. Em contraste, no caso 2, onde a combinação mínima é satisfeita, o ROV consegue seguir uma trajetória muito mais próxima da ideal, demonstrando a eficácia do algoritmo quando as condições mínimas são atendidas. O caso 5 também mostra uma melhora considerável em relação ao caso 1, embora ainda apresente desvios notáveis devido à falha do thruster.
+A figura~\ref{surge_trajectories} ilustra as trajetórias do ROV para a direção \textit{Surge} para todos os 5 casos de falha e o caso ideal, tanto com o algoritmo de otimização em ação quanto sem o algoritmo. É possível visualizar que a trajetória do caso 1, em azul, se destaca entre as demais trajetórias do caso com otimização por não ter sido capaz de manter a trajetória em \textit{surge}, isso ocorre devido ao tipo de falha do caso 1, pois a falha do caso 1 não obedece à combinação mínima de \textit{thrusters} para a movimentação em \textit{surge}, o ROV não é capaz de se movimentar adequadamente naquela direção, mesmo com o algoritmo de otimização ativo. Ainda na figura \ref{surge_trajectories}, é possível observar que as trajetórias dos casos sem otimização, em comparação com a trajetória ideal, em preto, apresentam maior dificuldade em se manter na trajetória, nos casos em que a trajetória se mantém, a distância percorrida no período de teste é significativamente menor do que a ideal, mostrando assim a eficiência do algoritmo de otimização em manter a navegabilidade do ROV.
 
 \begin{figure}[H]
   \centering
-  \caption{Trajetórias do ROV em \textit{Surge} para os casos 0, 1, 2 e 5.}
+  \caption{Trajetórias do ROV em \textit{Surge} com e sem otimização}
 
   % 4 subfiguras em uma linha com tamanho reduzido
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/x_ideal.png}
-    \caption{\textit{Surge} Trajetória Ideal}
+    \includegraphics[width=\textwidth]{images/trajectory_x_com_qp.png}
+    \caption{\textit{Surge} Trajetória com otimização}
     \label{fig:rov_front}
   \end{subfigure}\hspace{0.2em}%
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/x_caso_1.png}
-    \caption{\textit{Surge} Caso 1}
+    \includegraphics[width=\textwidth]{images/trajectory_x_sem_qp.png}
+    \caption{\textit{Surge} Trajetória sem otimização}
     \label{fig:rov_side}
   \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/x_caso_2.png}
-    \caption{\textit{Surge} Caso 2}
-    \label{fig:rov_iso}
-  \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/x_caso_5.png}
-    \caption{\textit{Surge} Caso 5}
-    \label{fig:rov_bottom}
-  \end{subfigure}
+  % \begin{subfigure}{0.45\textwidth}
+  %   \centering
+  %   \includegraphics[width=\textwidth]{images/x_caso_2.png}
+  %   \caption{\textit{Surge} Caso 2}
+  %   \label{fig:rov_iso}
+  % \end{subfigure}\hspace{0.2em}%
+  % \begin{subfigure}{0.45\textwidth}
+  %   \centering
+  %   \includegraphics[width=\textwidth]{images/x_caso_5.png}
+  %   \caption{\textit{Surge} Caso 5}
+  %   \label{fig:rov_bottom}
+  % \end{subfigure}
   
   \par\smallskip
   \small Fonte: Autores.
   \label{surge_trajectories}
 \end{figure}
 
-A figura~\ref{surge_4_comparation} exemplifica a melhora realizada pela otimização quando a configuração minima de \textit{thrusters} é respeitada, sendo possível garantir que o ROV siga a trajetória desejada com desvios mínimos. Relacionando a trajetória apresentada na figura~\ref{surge_4_comparation} com os dados do caso 4 na tabela \ref{tab:erro_direcao_surge}, é possível observar que o erro medio em \textit{X} é de apenas -0,209 m quando o algoritmo de otimização está ativo, enquanto sem o algoritmo, o erro médio aumenta significativamente para 5,823 m, que juntamente com o erro em \textit{yaw} de apenas 6,9° com otimização e de 360° sem a otimização, indicam uma incapacidade do ROV de manter a trajetória desejada sem a otimização. Isso demonstra a eficácia do algoritmo de otimização em melhorar a navegabilidade do ROV em situações de falhas nos thrusters, desde que as combinações mínimas sejam atendidas. 
 
+% \begin{figure}[H]
+%   \centering
+%   \caption{Comparação da trajetória do ROV em \textit{Surge} para o caso 4 com e sem otimização.}
 
-\begin{figure}[H]
-  \centering
-  \caption{Comparação da trajetória do ROV em \textit{Surge} para o caso 4 com e sem otimização.}
-
-  % 4 subfiguras em uma linha com tamanho reduzido
-  % \begin{subfigure}{0.45\textwidth}
-  %   \centering
-  %   \includegraphics[width=\textwidth]{images/y_caso_ideal.png}
-  %   \caption{\textit{Sway} Trajetória Ideal}
-  %   \label{fig:rov_front}
-  % \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/x_caso_4_com_qp.png}
-    \caption{\textit{Surge} Caso 4 com otimização}
-    \label{fig:rov_side}
-  \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/x_caso_4_sem_qp.png}
-    \caption{\textit{Surge} Caso 4 sem otimização}
-    \label{fig:rov_iso}
-  \end{subfigure}\hspace{0.2em}%
+%   4 subfiguras em uma linha com tamanho reduzido
+%   \begin{subfigure}{0.45\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{images/y_caso_ideal.png}
+%     \caption{\textit{Sway} Trajetória Ideal}
+%     \label{fig:rov_front}
+%   \end{subfigure}\hspace{0.2em}%
+%   \begin{subfigure}{0.45\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{images/x_caso_4_com_qp.png}
+%     \caption{\textit{Surge} Caso 4 com otimização}
+%     \label{fig:rov_side}
+%   \end{subfigure}\hspace{0.2em}%
+%   \begin{subfigure}{0.45\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{images/x_caso_4_sem_qp.png}
+%     \caption{\textit{Surge} Caso 4 sem otimização}
+%     \label{fig:rov_iso}
+%   \end{subfigure}\hspace{0.2em}%
   
   
-  \par\smallskip
-  \small Fonte: Autores.
-  \label{surge_4_comparation}
-\end{figure}
+%   \par\smallskip
+%   \small Fonte: Autores.
+%   \label{surge_4_comparation}
+% \end{figure}
 
 
-A tabela~\ref{tab:erro_direcao_sway} apresenta os resultados dos erros medios medidos na direção \textit{sway}. Na trajetória \textit{sway}, o caso 1 atende às combinações minimas de \textit{thrusters}, resultando em erros significativamente menores em comparação com os outros casos, em relação a trajetoria, mas ainda é possível observar a ação da otimização na velocidade e na distancia percorrida.
-O caso 2 não atende às combinações minimas de \textit{thrusters} para a movimentação em \textit{sway}, resultando em erros maiores na trajetória, mesmo com o algoritmo de otimização ativo. No entanto, o algoritimo ainda melhora a distancia percorrida e a velocidade media, ou seja mesmo com a falha, o ROV  mantem a capacidade de se movimentar com uma velocidade proxima a ideal, percorrendo distancias parecidas, apresentando um erro medio de apenas -0,006 m/s em velocidade e 0,248 m em distancia percorrida, quando com o otimizador ativado, em contraste com erros medios de -0,052 m/s e 1,897 m respectivamente, quando o otimizador está desativado.
+A tabela~\ref{tab:erro_direcao_sway} apresenta os resultados dos erros médios medidos na direção \textit{sway}. Na trajetória \textit{sway}, observa-se o mesmo comportamento dos resultados anteriores, onde os casos que apresentam o otimizador apresentam erros menores, com um desvio de direção menor quando comparados aos mesmos casos sem o otimizador. Destaca-se particularmente o Caso 4, onde a aplicação do algoritmo de otimização resultou em uma redução significativa do desvio padrão da distância percorrida, de 0,324 sem otimização, para 0,050 com otimização (redução de 84,75\%), demonstrando maior consistência e precisão no controle do movimento lateral.
+
+% o caso 1 atende às combinações mínimas de \textit{thrusters}, resultando em erros significativamente menores em comparação com os outros casos, em relação à trajetória, mas ainda é possível observar a ação da otimização na velocidade e na distância percorrida.
+% O caso 2 não atende às combinações mínimas de \textit{thrusters} para a movimentação em \textit{sway}, resultando em erros maiores na trajetória, mesmo com o algoritmo de otimização ativo. No entanto, o algoritmo ainda melhora a distância percorrida e a velocidade média, ou seja, mesmo com a falha, o ROV mantém a capacidade de se movimentar com uma velocidade próxima à ideal, percorrendo distâncias parecidas, apresentando um erro médio de apenas -0,006 m/s em velocidade e 0,248 m em distância percorrida, quando com o otimizador ativado, em contraste com erros médios de -0,052 m/s e 1,897 m respectivamente, quando o otimizador está desativado.
 
 
 \begin{table}[H]
@@ -159,11 +161,12 @@ O caso 2 não atende às combinações minimas de \textit{thrusters} para a movi
 \sffamily % Fonte sans-serif (Arial/Helvetica)
 
 % Título acima da tabela conforme orientações
-\caption{Erro medio por Direção (\textit{Sway})}
+\caption{Erro médio por Direção (\textit{Sway})}
 
 \vspace{0.5em}
 
-% Tabela sem linhas verticais, usando booktabs
+% Tabela sem linhas verticais, usando booktabs com resizebox
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccccc}
 \toprule
 \textbf{Caso} & & \textbf{Vel (m/s)} & \textbf{Distância (m)} & \textbf{X (m)} & \textbf{Y (m)} & \textbf{Z (m)} & \textbf{yaw (°)} \\
@@ -171,105 +174,91 @@ O caso 2 não atende às combinações minimas de \textit{thrusters} para a movi
 \multirow{2}{*}{\textbf{1}} & COM & 0,006 & -0,100 &-0,051 & -0,100 & 0,006 & -0,44 \\
  & SEM & 0,055 & 1,870 & 0,844 & 1,694 & 0,001 & 10,72 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{2}} & COM & -0,006	&0,248 & 0,714	&5,500	&0,026	&-333,8\\
- & SEM & 0,052	&1,897	&0,470	&5,450	&0,016	&-333,8\\
+\multirow{2}{*}{\textbf{2}} & COM & -0,006 & 0,248 & 0,714 & 5,500 & 0,026 & -333,8 \\
+ & SEM & 0,052 & 1,897 & 0,470 & 5,450 & 0,016 & -333,8 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{3}} & COM & 0,003 &-0,156 &-3,885 &2,40 &-0,015 &11,2 \\
- & SEM &0,004 &0,123 &-3,368&	2,46	&-0,001	&10,92 \\
+\multirow{2}{*}{\textbf{3}} & COM & 0,003 & -0,156 & -3,885 & 2,40 & -0,015 & 11,2 \\
+ & SEM &0,004 &0,123 &-3,368 &	2,46 &-0,001 &10,92 \\
 \addlinespace[0.2em]
 \multirow{2}{*}{\textbf{4}} & COM &-0,005 &-0,007 &-0,313	&0,10	&0,011	&-6,26 \\
  & SEM & 0,009 & 0,334 & -1,013	&4,28	&0,003	&-333,8 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{5}} & COM & -0,008& -0,206& -0,767	&-0,07	&0,004	&-7,46 \\
+\multirow{2}{*}{\textbf{5}} & COM & -0,008 & -0,206 & -0,767 & -0,07 & 0,004 & -7,46 \\
  & SEM & 0,010 & 0,484 & -1,011 & 4,28 & 0,012 & -333,8 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \label{tab:erro_direcao_sway}
 \end{table}
-
-\vspace{0.3em}
 \begin{center}
 {\footnotesize Fonte: Autores.}
 \end{center}
 
-O otimizador demonstra sua eficiencia principalmente no ambito da velocidade media e distancia percorrida, mesmo em casos onde a combinação minima de \textit{thrusters} não é atendida. Como o \textit{BlueRov2 Standerd}, possui uma configuração de 6 \textit{thrusters}, o otimizador encontra limitações na redistribuição das forças quando múltiplos \textit{thrusters} falham, o que  causa uma dificuldade em manter a trajétoria ideal, sendo possível visualizar erros significativos em \textit{Yaw} nos casos que não atendem as combinações minimas para aquela direção.
-Nos casos que atendem as combinações minimas, o otimizador é capaz de diminuir o error medio em \textit{yaw}, que é causado pelas falhas dos \textit{thrusters}, mantendo assim a capacidade do ROV de seguir a trajetoria desejada.
+Na figura~\ref{sway_trajectories} ilustra as trajetórias do ROV para a direção \textit{Sway} para todos os 5 casos de falha e o caso ideal, tanto com o algoritmo de otimização em ação quanto sem o algoritmo. É possivel visualizar que a trajetória do caso 2, em laranja, tem o mesmo comportamente do caso 1 em \textit{surge}, como não obedece a combinação mínima de \textit{thrusters} para a movimentação em \textit{sway}, o ROV não é capaz de se movimentar adequadamente naquela direção, mesmo com o algoritmo de otimização ativo. 
 
-O caso 3 se destaca por apresentar erros muito proximos entre os cenários com e sem otimização em qualquer trajetoria, indicando que a falha diagonal representada pelo caso três tem a capacidade de se autocompensar devido ao posicionamento dos \textit{thrusters} no ROV, o que minimiza o impacto da falha na capacidade de movimentação do veículo. Ainda que o impacto neste caso seja menos é possível obter melhorias significativas na velocidade media e distancia percorrida com o otimizador ativado. O maior fator de melhoria observado para o algoritimo de otimização é onservado tanto na distancia percorrida quanto na velocidade media, mantendo a capacidade do ROV de manter a velocidade o mais proxima do ideal possível e preservando também a capacidade de percorrer distancias similares ao caso ideal, mesmo com a falha de \textit{thrusters}.
-Em relação a manutenção da trajetória ideal, o otimizador enfrenta dificuldades devido as limitações de \textit{hardware} do ROV, essas limitações são refletidas nos casos que não respeitam as combinações minimas de \textit{thrusters}, e na trajetoria \textit{heave}. A combinação minima exigida para que haja o funcioamento ideal da trajetória \textit{heave} são de 2 \textit{thrusters} como indicado na tabela \ref{tab:comb_thrusters}, mas o ROV utilizado nos testes apresenta somente dois \textit{thrusters} verticais em sua estrutura, impossíbilitando que seja realizada a otimização no caso de falha de um dos \textit{thrusters} verticais, o que impossibilita a movimentação ideal na direção \textit{heave}. Em decorrencia dessa limitação física do ROV, os resultados obtidos para a trajetória \textit{heave} não são apresentados nesta seção.
+Contudo, ao analisar a tabela \ref{tab:erro_direcao_sway}, e possivel visualizar que, mesmo com a incapacidade de se mover na direção correta, o erro entre a distancia percorrida ideal e a distancia percorrida no teste com o otimizador ativo e de apenas 0,248 m, indicando que o otimizador ainda atua na navegabilidade do ROV, possibilitando que o mesmo percorra uma distância próxima ao ideal no mesmo intervalo de tempo mesmo com falha. Porem, a limitação física da distribuição dos \textit{thrusters} no modelo não permite que o ROV siga na direção correta, mesmo comportamento apresentado no caso 1 em \textit{surge}.
 
-Na figura~\ref{sway_trajectories} são ilustradas as trajetórias do ROV para a direção \textit{Sway} nos casos 0 (ideal), 1, 2 e 5, com o algoritmo de otimização em ação. Assim como para a trajetória \textit{Surge}, observa-se que no caso em que a falha não obedece a combinação mínima de thrusters (caso 2), o ROV apresenta uma trajetória significativamente desviada da ideal, evidenciando a incapacidade do algoritmo de otimização em compensar a falha dos thrusters devido a limitação de \textit{hardware} do ROV. Em contraste, no caso 1, onde a combinação mínima é satisfeita, o ROV consegue seguir uma trajetória muito mais próxima da ideal, demonstrando a eficácia do algoritmo quando as condições mínimas são atendidas. O caso 5 também mostra uma melhora considerável em relação ao caso 2, embora ainda apresente desvios notáveis devido à falha do thruster.
-
+Ainda na figura~\ref{sway_trajectories}, é possível observar que as trajetórias dos casos sem otimização, apresentam comportamentos similares aos observados na direção \textit{surge}, com desvios significativos em relação à trajetória ideal, evidenciando a dificuldade do ROV em manter o curso desejado sem o suporte do algoritmo de otimização.
 
 \begin{figure}[H]
   \centering
-  \caption{Trajetórias do ROV em \textit{Sway} para os casos 0, 1, 2 e 5.}
+  \caption{Trajetórias do ROV em \textit{Sway} com e sem otimização}
 
   % 4 subfiguras em uma linha com tamanho reduzido
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/y_caso_ideal.png}
-    \caption{\textit{Sway} Trajetória Ideal}
+    \includegraphics[width=\textwidth]{images/trajectory_y_com_qp.png}
+    \caption{\textit{Sway} Trajetória com otimização}
     \label{fig:rov_front}
   \end{subfigure}\hspace{0.2em}%
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/y_caso_1.png}
-    \caption{\textit{Sway} Caso 1}
+    \includegraphics[width=\textwidth]{images/trajectory_y_sem_qp.png}
+    \caption{\textit{Sway} Trajetória sem otimização}
     \label{fig:rov_side}
   \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/y_caso_2.png}
-    \caption{\textit{Sway} Caso 2}
-    \label{fig:rov_iso}
-  \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/y_caso_5.png}
-    \caption{\textit{Sway} Caso 5}
-    \label{fig:rov_bottom}
-  \end{subfigure}
   
   \par\smallskip
   \small Fonte: Autores.
   \label{sway_trajectories}
 \end{figure}
 
-Na figura \ref{sway_4_comparation} é possível observar o efeito do algoritmo de otimização na trajetória do ROV para o caso 4, sendo possível visualizar a melhora significativa na trajetória do ROV quando o algoritmo de otimização está presente quando comparamos a trajetória feita com a trajetória ideal apresentada na figura \ref{sway_trajectories}, apresentando somente um pequeno desvio em relação a trajetória ideal, enquanto sem o algoritmo o ROV não seria capaz de manter a trajetória desejada, apresentando um desvio considerável em relação a trajetória ideal.
+% \begin{figure}[H]
+%   \centering
+%   \caption{Comparação da trajetória do ROV em \textit{Sway} para o caso 4 com e sem otimização.}
 
-\begin{figure}[H]
-  \centering
-  \caption{Comparação da trajetória do ROV em \textit{Sway} para o caso 4 com e sem otimização.}
-
-  % 4 subfiguras em uma linha com tamanho reduzido
-  % \begin{subfigure}{0.45\textwidth}
-  %   \centering
-  %   \includegraphics[width=\textwidth]{images/y_caso_ideal.png}
-  %   \caption{\textit{Sway} Trajetória Ideal}
-  %   \label{fig:rov_front}
-  % \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/y_caso_4_com_qp.png}
-    \caption{\textit{Sway} Caso 4 com otimização}
-    \label{fig:rov_side}
-  \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/y_caso_4_sem_qp.png}
-    \caption{\textit{Sway} Caso 4 sem otimização}
-    \label{fig:rov_iso}
-  \end{subfigure}\hspace{0.2em}%
+%   4 subfiguras em uma linha com tamanho reduzido
+%   \begin{subfigure}{0.45\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{images/y_caso_ideal.png}
+%     \caption{\textit{Sway} Trajetória Ideal}
+%     \label{fig:rov_front}
+%   \end{subfigure}\hspace{0.2em}%
+%   \begin{subfigure}{0.45\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{images/y_caso_4_com_qp.png}
+%     \caption{\textit{Sway} Caso 4 com otimização}
+%     \label{fig:rov_side}
+%   \end{subfigure}\hspace{0.2em}%
+%   \begin{subfigure}{0.45\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{images/y_caso_4_sem_qp.png}
+%     \caption{\textit{Sway} Caso 4 sem otimização}
+%     \label{fig:rov_iso}
+%   \end{subfigure}\hspace{0.2em}%
   
   
-  \par\smallskip
-  \small Fonte: Autores.
-  \label{sway_4_comparation}
-\end{figure}
+%   \par\smallskip
+%   \small Fonte: Autores.
+%   \label{sway_4_comparation}
+% \end{figure}
 
 
-Na tabela~\ref{tab:erro_direcao_yaw} são apresentados os resultados dos erros medios obtidos na direção \textit{yaw}. Considerando a combinação ideal da trajetória \textit{yaw} como sendo a combinação diagonal de \textit{thrusters}, os resultados reforçam que a combinação do caso 3 obteve os melhores resultados nos testes. Contudo, o impacto do algoritmo de otimizaçao na trajetória \textit{yaw} é menos pronunciado em comparação com as outras direções, devido as caracteristicas da movimentação rotacional do ROV juntamente com as limitações fisicas do veiculo em situação de falhas nos \textit{thrusters}. Como metrica foi observada a capacidade do ROV completar o numero de voltas mais proximo do ideal, a capacidade de se mantar na orientação correta sem se desviar nas outras direções e a velocidade media de rotação. Assim nesse contexto foi observado que os casos que apresentavam somente um \textit{thruster} em falha (casos 4 e 5) apresentaram resultados mais satisfatórios, pois além de atenderam a combinação minima de \textit{thrusters} para a movimentação em \textit{yaw}, apresentam um \textit{thruster} a mais em funcionamento, o que possibilita uma melhor redistruibuição das forças, nesses casos apesar de apresentarem resultados melhores que os demais casos (1 e 2) a presença da otimização não foi capaz de melhorar os resultados quando comparados ao cenário sem otimização, indicando que a limitação física do ROV em termos de \textit{thrusters} disponíveis impacta significativamente a eficácia do algoritmo de otimização na manutenção da navegabilidade em situações de falhas.
+Na tabela~\ref{tab:erro_direcao_yaw} são apresentados os resultados dos erros médios obtidos na direção \textit{yaw}. Considerando a combinação ideal da trajetória \textit{yaw} como sendo a combinação diagonal de \textit{thrusters}, os resultados reforçam que a combinação do caso 3 obteve os melhores resultados nos testes. Contudo, o impacto do algoritmo de otimização na trajetória \textit{yaw} é menos pronunciado em comparação com as outras direções, devido às características da movimentação rotacional do ROV juntamente com as limitações físicas do veículo em situação de falhas nos \textit{thrusters}. A complexidade inerente do movimento rotacional é evidenciada pelos elevados desvios padrão observados, como no Caso 1, onde o desvio da velocidade angular (1,272°/s) e do ângulo yaw (38,261°) são consideravelmente superiores aos desvios típicos dos movimentos lineares. Como métrica foi observada a capacidade do ROV completar o número de voltas mais próximo do ideal, a capacidade de se manter na orientação correta sem se desviar nas outras direções e a velocidade média de rotação. 
+
+Assim nesse contexto foi observado que os casos que apresentavam somente um \textit{thruster} em falha (casos 4 e 5) apresentaram resultados mais satisfatórios, pois além de atenderem à combinação mínima de \textit{thrusters} para a movimentação em \textit{yaw}, apresentam um \textit{thruster} a mais em funcionamento, o que possibilita uma melhor redistribuição das forças, nesses casos apesar de apresentarem resultados melhores que os demais casos (1 e 2) a presença da otimização não foi capaz de melhorar os resultados quando comparados ao cenário sem otimização, indicando que há uma limitação do algoritmo em melhorar a movimentação em \textit{yaw} em situações de falhas nos \textit{thrusters}. Apesar disso, o algoritmo de otimização ainda conseguiu manter a navegabilidade do ROV, seguindo assim a trajetória desejada, mas com eficiência reduzida.
+
+A figura~\ref{yaw_trajectories} ilustra as trajetórias do ROV para a direção \textit{Yaw} em todos dos casos de falha, incluindo o caso ideal sem falhas (caso 0). Observa-se que, assim como mostrado na tabela~\ref{tab:erro_direcao_yaw}, o otimizador não apresenta uma melhora significativa na trajetória do ROV em \textit{Yaw}, sendo incapaz de manter a trajetória no caso 1, e apesar de conseguir completar a trajetória nos casos 3 e 5, ainda apresenta desvios consideráveis em relação à trajetória ideal, não sendo capaz de completar o mesmo número de voltas, o que pode ser visto na tabela \ref{tab:erro_direcao_yaw}. Analisando ainda a tabela~\ref{tab:erro_direcao_yaw}, o algoritmo não foi capaz de melhorar a velocidade média de rotação mesmo nos casos que atendem às combinações mínimas de \textit{thrusters} para a movimentação em \textit{Yaw} (casos 3 e 5), sendo capaz de garantir que o ROV complete as trajetórias, mas não no mesmo período de tempo e com uma velocidade significativamente reduzida.
 
 
 % Tabela formatada conforme normas SENAI CIMATEC/ABNT
@@ -279,75 +268,162 @@ Na tabela~\ref{tab:erro_direcao_yaw} são apresentados os resultados dos erros m
 \sffamily % Fonte sans-serif (Arial/Helvetica)
 
 % Título acima da tabela conforme orientações
-\caption{Erro medio por Direção (\textit{Yaw})}
+\caption{Erro médio por Direção (\textit{Yaw})}
 
 \vspace{0.5em}
 
-% Tabela sem linhas verticais, usando booktabs
+% Tabela sem linhas verticais, usando booktabs com resizebox
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccccc}
 \toprule
 \textbf{Caso} & & \textbf{Vel (°/s)} & \textbf{N° de Voltas} & \textbf{X (m)} & \textbf{Y (m)} & \textbf{Z (m)} & \textbf{yaw (°)} \\
 \midrule
 \multirow{2}{*}{\textbf{1}} & COM & 92,360 & 8,020 &-1,026 & -1,101 & 0,006 & 2897,22 \\
- & SEM & 48,020 & 4,180 & -0,910 & -186,728 & 0,002 & 1502,48 \\
+ & SEM & 48,020 & 4,180 & -0,910 & -0,914 & 0,002 & 1502,48 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{2}} & COM & 99,78 & 9,020 &	-1,440&	-1,31	&0,008&	3138,84\\
- & SEM & 49,120&	4,3	&-0,672	&-0,67	&0,001	&1550,44\\
+\multirow{2}{*}{\textbf{2}} & COM & 99,78 & 9,020 &	-1,440 &	-1,31 & 0,008 &	3138,84 \\
+ & SEM & 49,120 &	4,3 & -0,672 & -0,67 & 0,001 & 1550,44 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{3}} & COM & 44,880&	3,900	&-0,001&	0,00&	0,008	&1399,74 \\
- & SEM &49,300&	4,34	&-0,001	&0,00	&0,012	&1556,72 \\
+\multirow{2}{*}{\textbf{3}} & COM & 44,880 &	3,900 & -0,001 &	0,00 &	0,008 & 1399,74 \\
+ & SEM & 49,300 &	4,34 & -0,001 & 0,00 & 0,012 & 1556,72 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{4}} & COM &41,060&	2,720	&-0,069&	-0,06	&-0,001	&1235,02 \\
- & SEM & 25,060&	2,26	&-0,376	&-0,38	&0,007	&806,1 \\
+\multirow{2}{*}{\textbf{4}} & COM & 41,060 &	2,720 & -0,069 & -0,06 & -0,001 & 1235,02 \\
+ & SEM & 25,060 &	2,26 & -0,376 & -0,38 & 0,007 & 806,1 \\
 \addlinespace[0.2em]
-\multirow{2}{*}{\textbf{5}} & COM & 41,360&	3,520&	-0,066&	-0,07	&0,002	&1265,32 \\
- & SEM & 25,580&	2,14	&-0,375&	-0,38&	-0,001&	775,62 \\
+\multirow{2}{*}{\textbf{5}} & COM & 41,360 &	3,520 & -0,066 & -0,07 & 0,002 & 1265,32 \\
+ & SEM & 25,580 &	2,14 & -0,375 & -0,38 & -0,001 & 775,62 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \label{tab:erro_direcao_yaw}
 \end{table}
-
-\vspace{0.3em}
 \begin{center}
 {\footnotesize Fonte: Autores.}
 \end{center}
 
-A figura~\ref{yaw_trajectories} ilustra as trajetórias do ROV para a direção \textit{Yaw} nos casos 0 (ideal), 1, 3 e 5, com o algoritmo de otimização em ação. Observa-se que, assim como mostrado na tabela~\ref{tab:erro_direcao_yaw}, o otimizador não apresenta uma melhora sifnificativa na trajétoria do ROV em \textit{Yaw}, sendo incapaz de manter a trajétoria no caso 1, e apesar de conseguir completar a trajetória nos casos 3 e 5, ainda apresenta desvios consideráveis em relação à trajetória ideal, não sendo capaz de completar o mesmo numero de voltas, o que pode ser visto na densidade das linhas nas figuras. Relacionando ainda com a tabela~\ref{tab:erro_direcao_yaw}, o algoritimo não foi capaz de melhorar a valocidade media de rotação mesmo nos casos que atendem as combinações minimas de \textit{thrusters} para a movimentação em \textit{Yaw} (casos 3 e 5), sendo capaz de garantir que o rov complete a trajetorias, mas não no mesmo periodo de temo e com uma velocidade cignificativamente reduzida. 
-
-
-
 \begin{figure}[H]
   \centering
-  \caption{Trajetórias do ROV em \textit{Yaw} para os casos 0, 1, 3 e 5.}
+  \caption{Trajetórias do ROV em \textit{Yaw} com e sem otimização}
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/yaw_caso_0.png}
-    \caption{\textit{Yaw} Trajetória Ideal}
+    \includegraphics[width=\textwidth]{images/trajectory_yaw_com_qp.png}
+    \caption{\textit{Yaw} Trajetória com otimização}
     \label{fig:rov_front}
   \end{subfigure}\hspace{0.2em}%
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/yaw_caso_1.png}
-    \caption{\textit{Yaw} Caso 1}
+    \includegraphics[width=\textwidth]{images/trajectory_yaw_sem_qp.png}
+    \caption{\textit{Yaw} Trajetória sem otimização}
     \label{fig:rov_side}
   \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/yaw_caso_3.png}
-    \caption{\textit{Yaw} Caso 3}
-    \label{fig:rov_iso}
-  \end{subfigure}\hspace{0.2em}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/yaw_caso_5.png}
-    \caption{\textit{Yaw} Caso 5}
-    \label{fig:rov_bottom}
-  \end{subfigure}
   
   \par\smallskip
   \small Fonte: Autores.
   \label{yaw_trajectories}
 \end{figure}
+
+Os valores de desvio padrão em \textit{yaw} demonstram comportamento significativamente mais complexo e instável em relação aos movimentos lineares, confirmando a natureza desafiadora do controle rotacional em situações de falha. Por exemplo, no Caso 2, o desvio padrão da velocidade angular atinge 7,190°/s (COM) comparado a 1,602°/s (SEM), enquanto o desvio do ângulo yaw alcança valores extremos de 222,878 (COM) versus 54,308 (SEM), ordens de magnitude superiores aos desvios observados nas direções surge e sway, que tipicamente ficam abaixo de 1,0 . As variáveis lineares (X, Y e Z) mantêm dispersão mínima durante as rotações, sugerindo boa estabilidade posicional, mas a variabilidade angular evidencia os desafios inerentes ao controle de altitude em condições de falha dos \textit{thrusters}.
+
+Em relação à manutenção da trajetória ideal, o otimizador enfrenta dificuldades devido às limitações geradas pela disposição dos \textit{thrusters} do ROV, essas limitações são refletidas nos casos que não respeitam as combinações mínimas de \textit{thrusters}, e na trajetória \textit{heave}. 
+
+A combinação mínima exigida para que haja o funcionamento ideal da trajetória \textit{heave} são de 2 \textit{thrusters} como indicado na tabela \ref{tab:comb_thrusters}, mas o ROV utilizado nos testes apresenta somente dois \textit{thrusters} verticais em sua estrutura, impossibilitando que seja realizada a otimização no caso de falha de um dos \textit{thrusters} verticais, o que impossibilita a movimentação ideal na direção \textit{heave}. Em decorrência dessa limitação física do ROV, os resultados obtidos para a trajetória \textit{heave} não são apresentados nesta seção.
+
+% ===== TABELAS DE DESVIOS PADRÃO (COMENTADAS) =====
+% As tabelas a seguir apresentam os desvios padrão correspondentes às tabelas principais de resultados
+
+% \begin{table}[H]
+% \centering
+% \small
+% \sffamily
+% \caption{Desvios Padrão - Erro médio por Direção (\textit{Surge})}
+% \vspace{0.5em}
+% \resizebox{\textwidth}{!}{%
+% \begin{tabular}{p{0.3cm}lcccccc}
+% \toprule
+% \textbf{Caso} & &\textbf{Vel (m/s)} & \textbf{Distância (m)} & \textbf{X (m)} & \textbf{Y (m)} & \textbf{Z (m)} & \textbf{yaw (°)} \\
+% \midrule
+% \multirow{2}{*}{\textbf{1}} & COM & 0,031 & 0,101 & 0,105 & 0 & 0,014 & 0 \\
+%  & SEM & 0,005 & 0,117 & 0,108 & 0 & 0,008 & 0 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{2}} & COM & 0,004 & 0,115 & 0,120 & 0,001 & 0,003 & 0\\
+%  & SEM & 0,008 & 0,247 & 0,247 & 0 & 0,004 & 0\\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{3}} & COM & 0,010 & 0,122 & 1,159 & 0,027 & 0,180 & 0,089 \\
+%  & SEM & 0,013 & 0,328 & 0,282 & 0,152 & 0,023 & 0,515 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{4}} & COM & 0,013 & 0,132 & 0,116 & 0,088 & 0,028 & 0,612 \\
+%  & SEM & 0,004 & 0,252 & 0,089 & 0 & 0,005 & 0 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{5}} & COM & 0,010 & 0,181 & 0,177 & 0,012 & 0,022 & 0,098 \\
+%  & SEM & 0,007 & 0,013 & 0,017 & 0 & 0,013 & 0 \\
+% \bottomrule
+% \end{tabular}%
+% }
+% \label{tab:desvio_surge}
+% \end{table}
+
+% \begin{table}[H]
+% \centering
+% \small
+% \sffamily
+% \caption{Desvios Padrão - Erro médio por Direção (\textit{Sway})}
+% \vspace{0.5em}
+% \resizebox{\textwidth}{!}{%
+% \begin{tabular}{lcccccccc}
+% \toprule
+% \textbf{Caso} & & \textbf{Vel (m/s)} & \textbf{Distância (m)} & \textbf{X (m)} & \textbf{Y (m)} & \textbf{Z (m)} & \textbf{yaw (°)} \\
+% \midrule
+% \multirow{2}{*}{\textbf{1}} & COM & 0,014 & 0,091 & 0,038 & 0,077 & 0,020 & 0,307 \\
+%  & SEM & 0,002 & 0,087 & 0,028 & 0,081 & 0,010 & 0,279 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{2}} & COM & 0,005 & 0,143 & 0 & 0,154 & 0,001 & 0 \\
+%  & SEM & 0,004 & 0,252 & 0,002 & 0,238 & 0,017 & 0 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{3}} & COM & 0,006 & 0,577 & 0,735 & 0,235 & 0,040 & 0,867 \\
+%  & SEM & 0,005 & 0,079 & 0,036 & 0,051 & 0,014 & 0,264 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{4}} & COM & 0,007 & 0,050 & 0,019 & 0,039 & 0,008 & 0,150 \\
+%  & SEM & 0,004 & 0,328 & 0,003 & 0,004 & 0,031 & 0 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{5}} & COM & 0,005 & 0,205 & 0,701 & 0,178 & 0,021 & 0,692 \\
+%  & SEM & 0,005 & 0,047 & 0,001 & 0,004 & 0 & 0 \\
+% \bottomrule
+% \end{tabular}%
+% }
+% \label{tab:desvio_sway}
+% \end{table}
+
+% \begin{table}[H]
+% \centering
+% \small
+% \sffamily
+% \caption{Desvios Padrão - Erro médio por Direção (\textit{Yaw})}
+% \vspace{0.5em}
+% \resizebox{\textwidth}{!}{%
+% \begin{tabular}{lcccccccc}
+% \toprule
+% \textbf{Caso} & & \textbf{Vel (°/s)} & \textbf{N° de Voltas} & \textbf{X (m)} & \textbf{Y (m)} & \textbf{Z (m)} & \textbf{yaw (°)} \\
+% \midrule
+% \multirow{2}{*}{\textbf{1}} & COM & 1,272 & 0,075 & 0,089 & 0,146 & 0,007 & 38,261 \\
+%  & SEM & 0,947 & 0,075 & 0,004 & 0,008 & 0,006 & 23,820 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{2}} & COM & 7,190 & 0,964 & 0,065 & 0,175 & 0,006 & 222,878 \\
+%  & SEM & 1,602 & 0,167 & 0,013 & 0,005 & 0,003 & 54,308 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{3}} & COM & 3,467 & 0,253 & 0 & 0 & 0,007 & 100,736 \\
+%  & SEM & 0,978 & 0,080 & 0 & 0 & 0,002 & 27,644 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{4}} & COM & 1,948 & 0,757 & 0,002 & 0,001 & 0,017 & 86,222 \\
+%  & SEM & 2,131 & 0,224 & 0,002 & 0,001 & 0,003 & 75,631 \\
+% \addlinespace[0.2em]
+% \multirow{2}{*}{\textbf{5}} & COM & 4,107 & 0,147 & 0,002 & 0,002 & 0,016 & 58,214 \\
+%  & SEM & 2,629 & 0,080 & 0 & 0,002 & 0,011 & 23,151 \\
+% \bottomrule
+% \end{tabular}%
+% }
+% \label{tab:desvio_yaw}
+% \end{table}
+
 
 \end{document}
 

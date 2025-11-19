@@ -19,40 +19,70 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{fossen2021handbook}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8eca0c434dd587f3eff346c053ba5948}{%
+           family={Fossen},
+           familyi={F\bibinitperiod},
+           given={Thor\bibnamedelima I.},
+           giveni={T\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Chichester}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{8eca0c434dd587f3eff346c053ba5948}
+      \strng{fullhash}{8eca0c434dd587f3eff346c053ba5948}
+      \strng{bibnamehash}{8eca0c434dd587f3eff346c053ba5948}
+      \strng{authorbibnamehash}{8eca0c434dd587f3eff346c053ba5948}
+      \strng{authornamehash}{8eca0c434dd587f3eff346c053ba5948}
+      \strng{authorfullhash}{8eca0c434dd587f3eff346c053ba5948}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Handbook of marine craft hydrodynamics and motion control}
+      \field{year}{2021}
+    \endentry
     \entry{johansen2005efficient}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=a9a86ebeca0cd008a601339e86e19fae}{%
            family={Johansen},
            familyi={J\bibinitperiod},
-           given={Tor\bibnamedelima A},
+           given={Tor\bibnamedelima A.},
            giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod},
            givenun=0}}%
         {{un=0,uniquepart=base,hash=8eca0c434dd587f3eff346c053ba5948}{%
            family={Fossen},
            familyi={F\bibinitperiod},
-           given={Thor\bibnamedelima I},
+           given={Thor\bibnamedelima I.},
            giveni={T\bibinitperiod\bibinitdelim I\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=08f50a8f46c42e45104ba4ffafdf00cf}{%
-           family={T{ø}ndel},
+        {{un=0,uniquepart=base,hash=bce3cc44ddf9a3db79bbaef85f267a34}{%
+           family={Tondel},
            familyi={T\bibinitperiod},
            given={Petter},
            giveni={P\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
-      \strng{fullhash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
-      \strng{bibnamehash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
-      \strng{authorbibnamehash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
-      \strng{authornamehash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
-      \strng{authorfullhash}{b08d12c2c0bc7c5aa8a40cbc4fb1b35d}
+      \strng{namehash}{9a351e835443bb7849a39461c9afbfd0}
+      \strng{fullhash}{9a351e835443bb7849a39461c9afbfd0}
+      \strng{bibnamehash}{9a351e835443bb7849a39461c9afbfd0}
+      \strng{authorbibnamehash}{9a351e835443bb7849a39461c9afbfd0}
+      \strng{authornamehash}{9a351e835443bb7849a39461c9afbfd0}
+      \strng{authorfullhash}{9a351e835443bb7849a39461c9afbfd0}
       \field{sortinit}{J}
       \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of guidance, control, and dynamics}
+      \field{journaltitle}{Journal of Guidance, Control, and Dynamics}
       \field{number}{3}
       \field{title}{Efficient optimal constrained control allocation via multiparametric programming}
       \field{volume}{28}
@@ -71,7 +101,10 @@
       }
       \list{institution}{2}{%
         {Flinders University, College of Science}%
-        {Engineering.}%
+        {Engineering}%
+      }
+      \list{location}{1}{%
+        {Adelaide, Australia}%
       }
       \strng{namehash}{1b82ca495ce382c44a394ab473ba4b4b}
       \strng{fullhash}{1b82ca495ce382c44a394ab473ba4b4b}
@@ -86,7 +119,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{bookpagination}{sheet}
-      \field{title}{6-dof modelling and control of a remotely operated vehicle}
+      \field{title}{6-DOF modelling and control of a remotely operated vehicle}
       \field{type}{phdthesis}
       \field{year}{2018}
     \endentry

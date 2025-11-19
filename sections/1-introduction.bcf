@@ -2427,13 +2427,19 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">biazon2017profundezas</bcf:citekey>
-    <bcf:citekey order="2">petrobras2024</bcf:citekey>
-    <bcf:citekey order="3">OSHA2023</bcf:citekey>
-    <bcf:citekey order="4">8559384</bcf:citekey>
-    <bcf:citekey order="5">biazon2017profundezas</bcf:citekey>
-    <bcf:citekey order="6">petrobras2024</bcf:citekey>
-    <bcf:citekey order="7">OSHA2023</bcf:citekey>
-    <bcf:citekey order="8">8559384</bcf:citekey>
+    <bcf:citekey order="2">biazon2017profundezas</bcf:citekey>
+    <bcf:citekey order="3">petrobras2024</bcf:citekey>
+    <bcf:citekey order="4">OSHA2023</bcf:citekey>
+    <bcf:citekey order="5">xu2018optimization</bcf:citekey>
+    <bcf:citekey order="6">xu2018optimization</bcf:citekey>
+    <bcf:citekey order="7">xu2018optimization</bcf:citekey>
+    <bcf:citekey order="8">christ2013rov</bcf:citekey>
+    <bcf:citekey order="9">christ2013rov</bcf:citekey>
+    <bcf:citekey order="10">biazon2017profundezas</bcf:citekey>
+    <bcf:citekey order="11">petrobras2024</bcf:citekey>
+    <bcf:citekey order="12">OSHA2023</bcf:citekey>
+    <bcf:citekey order="13">xu2018optimization</bcf:citekey>
+    <bcf:citekey order="14">christ2013rov</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

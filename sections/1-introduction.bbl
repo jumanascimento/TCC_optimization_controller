@@ -40,34 +40,74 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Revista Marı́tima Brasileira}
-      \field{number}{0709}
+      \field{journaltitle}{Revista Marítima Brasileira}
+      \field{number}{7-9}
       \field{title}{Nas profundezas dos oceanos}
       \field{volume}{137}
       \field{year}{2017}
       \field{pages}{66\bibrangedash 82}
       \range{pages}{17}
     \endentry
+    \entry{christ2013rov}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e540ab90063691f3d1ae8c0b032adcfb}{%
+           family={Christ},
+           familyi={C\bibinitperiod},
+           given={Robert\bibnamedelima D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f1ec99e0cb702e71e7ab208fc9af64b5}{%
+           family={Wernli\bibnamedelima Sr},
+           familyi={W\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Oxford, Reino Unido}%
+      }
+      \list{publisher}{1}{%
+        {Butterworth-Heinemann}%
+      }
+      \strng{namehash}{d68ceafb52feb67e1fd342ab0f44cde1}
+      \strng{fullhash}{d68ceafb52feb67e1fd342ab0f44cde1}
+      \strng{bibnamehash}{d68ceafb52feb67e1fd342ab0f44cde1}
+      \strng{authorbibnamehash}{d68ceafb52feb67e1fd342ab0f44cde1}
+      \strng{authornamehash}{d68ceafb52feb67e1fd342ab0f44cde1}
+      \strng{authorfullhash}{d68ceafb52feb67e1fd342ab0f44cde1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{subtitle}{a user guide for remotely operated vehicles}
+      \field{title}{The ROV manual:}
+      \field{year}{2013}
+    \endentry
     \entry{OSHA2023}{misc}{}
       \name{author}{1}{}{%
-        {{hash=4c494074a916bd3af06330ce20c4a84c}{%
-           family={{Occupational Safety and Health Administration}},
+        {{hash=6f48a8919482963541e5015357bcf18f}{%
+           family={{OCCUPATIONAL SAFETY AND HEALTH ADMINISTRATION}},
            familyi={O\bibinitperiod}}}%
       }
       \name{shortauthor}{1}{}{%
         {{un=0,uniquepart=base,hash=7b95917312740e2be161a373be1bdce9}{%
-           family={OSHA},
+           family={{OSHA}},
            familyi={O\bibinitperiod}}}%
       }
-      \list{organization}{1}{%
+      \list{location}{1}{%
+        {Washington, D.C., EUA}%
+      }
+      \list{publisher}{1}{%
         {U.S. Department of Labor}%
       }
       \strng{namehash}{7b95917312740e2be161a373be1bdce9}
-      \strng{fullhash}{4c494074a916bd3af06330ce20c4a84c}
+      \strng{fullhash}{6f48a8919482963541e5015357bcf18f}
       \strng{bibnamehash}{7b95917312740e2be161a373be1bdce9}
-      \strng{authorbibnamehash}{4c494074a916bd3af06330ce20c4a84c}
-      \strng{authornamehash}{4c494074a916bd3af06330ce20c4a84c}
-      \strng{authorfullhash}{4c494074a916bd3af06330ce20c4a84c}
+      \strng{authorbibnamehash}{6f48a8919482963541e5015357bcf18f}
+      \strng{authornamehash}{6f48a8919482963541e5015357bcf18f}
+      \strng{authorfullhash}{6f48a8919482963541e5015357bcf18f}
       \strng{shortauthorbibnamehash}{7b95917312740e2be161a373be1bdce9}
       \strng{shortauthornamehash}{7b95917312740e2be161a373be1bdce9}
       \strng{shortauthorfullhash}{7b95917312740e2be161a373be1bdce9}
@@ -77,53 +117,39 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{shortauthor}
       \field{labeltitlesource}{title}
-      \field{note}{Acesso em: 18 ago. 2025}
-      \field{title}{Commercial Diving: Hazards and Solutions}
-      \field{urlday}{15}
-      \field{urlmonth}{11}
-      \field{urlyear}{2023}
+      \field{label}{Administração de Segurança e Saúde Ocupacional}
+      \field{subtitle}{Hazards and Solutions}
+      \field{title}{Commercial Diving:}
       \field{year}{2023}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.osha.gov/commercial-diving/hazards-solutions
-      \endverb
-      \verb{url}
-      \verb https://www.osha.gov/commercial-diving/hazards-solutions
-      \endverb
     \endentry
-    \entry{petrobras2024}{report}{}
+    \entry{petrobras2024}{misc}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=7c4df8f6cb50526502e2abcd4a153887}{%
-           family={{Petrobras}},
+        {{un=0,uniquepart=base,hash=4db66726202124be9874be8d974d8ab2}{%
+           family={{PETROBRAS}},
            familyi={P\bibinitperiod}}}%
       }
-      \list{institution}{1}{%
+      \list{location}{1}{%
+        {Rio de Janeiro, Brasil}%
+      }
+      \list{publisher}{1}{%
         {Petrobras}%
       }
-      \strng{namehash}{7c4df8f6cb50526502e2abcd4a153887}
-      \strng{fullhash}{7c4df8f6cb50526502e2abcd4a153887}
-      \strng{bibnamehash}{7c4df8f6cb50526502e2abcd4a153887}
-      \strng{authorbibnamehash}{7c4df8f6cb50526502e2abcd4a153887}
-      \strng{authornamehash}{7c4df8f6cb50526502e2abcd4a153887}
-      \strng{authorfullhash}{7c4df8f6cb50526502e2abcd4a153887}
+      \strng{namehash}{4db66726202124be9874be8d974d8ab2}
+      \strng{fullhash}{4db66726202124be9874be8d974d8ab2}
+      \strng{bibnamehash}{4db66726202124be9874be8d974d8ab2}
+      \strng{authorbibnamehash}{4db66726202124be9874be8d974d8ab2}
+      \strng{authornamehash}{4db66726202124be9874be8d974d8ab2}
+      \strng{authorfullhash}{4db66726202124be9874be8d974d8ab2}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{acessado em 18 de agosto de 2025}
-      \field{title}{Relatório de Sustentabilidade Petrobras 2024}
-      \field{type}{Relatório de Sustentabilidade}
+      \field{title}{Relatório de sustentabilidade Petrobras 2024}
       \field{year}{2024}
-      \verb{urlraw}
-      \verb https://issuu.com/estantepetrobras/docs/relat_rio_de_sustentabilidade_petrobras_-_2024
-      \endverb
-      \verb{url}
-      \verb https://issuu.com/estantepetrobras/docs/relat_rio_de_sustentabilidade_petrobras_-_2024
-      \endverb
     \endentry
-    \entry{8559384}{inproceedings}{}
+    \entry{xu2018optimization}{inproceedings}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=4f03e7f12189eb881b9b6910d8491b96}{%
            family={Xu},
@@ -138,6 +164,12 @@
            giveni={N\bibinitperiod},
            givenun=0}}%
       }
+      \list{location}{1}{%
+        {Kobe, Japão}%
+      }
+      \list{publisher}{1}{%
+        {IEEEXplore}%
+      }
       \strng{namehash}{8705824a57aac5164658a5eb1621d221}
       \strng{fullhash}{8705824a57aac5164658a5eb1621d221}
       \strng{bibnamehash}{8705824a57aac5164658a5eb1621d221}
@@ -150,15 +182,11 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{2018 OCEANS - MTS/IEEE Kobe Techno-Oceans (OTO)}
-      \field{title}{Optimization of ROV Control Based on Genetic Algorithm}
+      \field{booktitle}{OCEANS - MTS/IEEE Kobe Techno-Oceans (OTO)}
+      \field{title}{Optimization of ROV control based on genetic algorithm}
       \field{year}{2018}
       \field{pages}{1\bibrangedash 4}
       \range{pages}{4}
-      \verb{doi}
-      \verb 10.1109/OCEANSKOBE.2018.8559384
-      \endverb
-      \keyw{Genetic algorithms;Interference;PI control;PD control;Fuzzy logic;Fuzzy control;Oceans;ROV;GA;Fuzzy-PID;anti-jamming;Automatic control}
     \endentry
   \enddatalist
 \endrefsection

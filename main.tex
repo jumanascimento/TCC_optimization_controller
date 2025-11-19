@@ -61,11 +61,14 @@
 %   urlseen = {Acesso em},
 % }
 
+% Configurar justificação para as referências
+\AtBeginBibliography{\justifying}
+
 % ==== Pacotes ====
 \usepackage{graphicx}  % Inserir imagens
-\usepackage{helvet}    % Fonte similar ao Arial
+\usepackage{mathptmx}  % Times New Roman para texto e matemática
 \usepackage{ragged2e} % para \justifying
-\renewcommand{\familydefault}{\sfdefault} % Define Arial/Helvetica como padrão
+% \renewcommand{\familydefault}{\sfdefault} % Define Arial/Helvetica como padrão - COMENTADO
 \usepackage{setspace}  % Controle de espaçamento
 \usepackage{subcaption}
 \usepackage{gensymb}
@@ -103,13 +106,13 @@
 
     \begin{flushright}
         Júlia Maria Nascimento Ribeiro\textsuperscript{1}\\
-        Orientador: Msc. Rebeca Tourinho Lima\textsuperscript{2}\\
+        Orientadora: Msc. Rebeca Tourinho Lima\textsuperscript{2}\\
         Coorientador: Msc. Lucas Marins Batista\textsuperscript{3}\\
     \end{flushright}
     \begin{flushleft}
       \begin{small}
-          \textsuperscript{1}Universidade Senai Cimatec, E-mail: julia.ribeiro@gmail.com;\\
-          \textsuperscript{2}Universidade Senai Cimatec, E-mail: rebeca.lima@fieb.org.br;\\
+          \textsuperscript{1}Universidade Senai Cimatec, E-mail: julia.ribeiro@aln.senaicimatec.edu.br;\\
+          \textsuperscript{2}Universidade Senai Cimatec, E-mail: rebeca.lima@doc.senaicimatec.edu.br;\\
           \textsuperscript{3}Universidade Senai Cimatec, E-mail: lucas.batista@fieb.org.br;\\
         \end{small}
       \end{flushleft}
@@ -121,20 +124,22 @@
       \end{center}
 
     \noindent\textbf{Resumo:} 
-    \textit{A fazer}
+    \textit{Este trabalho aborda o desenvolvimento e validação de um algoritmo de otimização para tolerância à falha em veículos subaquáticos remotamente operados (ROVs), especificamente no BlueROV2 Standard que conta com 6 \textit{thrusters}. O objetivo principal é manter a navegabilidade do veículo em casos de falha total de um ou mais \textit{thrusters}, através da redistribuição otimizada das forças entre os \textit{thrusters} remanescentes. A metodologia envolveu simulações computacionais utilizando o Gazebo Ignition e ROS 2 Control, testando diferentes cenários de falhas em trajetórias de movimento (\textit{surge}, \textit{sway}, \textit{heave} e \textit{yaw}). Os resultados demonstram que o algoritmo é eficaz na manutenção da navegabilidade do ROV, especialmente quando as combinações mínimas de \textit{thrusters} são respeitadas, melhorando significativamente a velocidade média e distância percorrida mesmo em condições de falha. O trabalho contribui para a melhoria no processo de operação de ROVs e em sua capacidade de conclusão de tarefas.
+    }
+
     \noindent\textbf{Palavras-Chaves:} 
-      \textit{xxxxx}    
+      \textit{ROV; otimização; tolerância a falhas; \textit{thrusters}; veículos subaquáticos}    
 
 }
 
 \newcommand\makeabstract{
   \noindent\textbf{Abstract:} 
-    \textit{TODO}
+    \textit{This work addresses the development and validation of an optimization algorithm for fault tolerance in remotely operated underwater vehicles (ROVs), specifically in the BlueROV2 Standard that has 6 thrusters. The main objective is to maintain the vehicle's navigability in cases of total failure of one or more thrusters, through the optimized redistribution of forces among the remaining thrusters. The methodology involved computational simulations using Gazebo Ignition and ROS 2 Control, testing different failure scenarios in movement trajectories (surge, sway, heave, and yaw). The results demonstrate that the algorithm is effective in maintaining the ROV's navigability, especially when the minimum thruster combinations are respected, significantly improving the average speed and distance traveled even under failure conditions. This work contributes to improving the ROV operation process and its ability to complete tasks.}
 
   \vspace{0.4\baselineskip}
 
   \noindent\textbf{Keywords:} 
-  \textit{xxxxx}
+  \textit{ROV; optimization; fault tolerance; thrusters; underwater vehicles}
 
   \vspace{\baselineskip}
 }
@@ -179,6 +184,9 @@
     \section*{Agradecimentos}
     % \label{sec:conclusion}
     \subfile{sections/6-acknowledgment.tex}
+
+% Configurar título das referências em português
+\defbibheading{bibliography}[\refname]{\section*{REFERÊNCIAS}}
 
 \printbibliography
 
